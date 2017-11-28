@@ -10,36 +10,65 @@ namespace Softmon
     [XmlInclude(typeof(PokemonNormal))]
     public class Pokemon
     {
-        
-        protected string name;
-        protected string type;
-        protected int level;
-
-        protected int attack;
-        protected int defence;
-        protected int health;
-        protected int speed;
-
-        public float Attack(Pokemon defender)
+        protected int Id
         {
-            float levelDamage = ((2 * this.level) / 5) + 2;
-            float modifier = Effectiveness(defender.type);
-            float attackVsDefence = this.attack / defender.defence;
-
-            return ((levelDamage * attackVsDefence) / 50 + 2) * modifier;
-        }
-
-        public string Name {
             get;
             set;
         }
-        public string Type => this.type;
-        public int Level => this.level;
+
+        protected string Name
+        {
+            get;
+            set;
+        }
+
+        protected string Type
+        {
+            get;
+            set;
+        }
+
+        protected int Level
+        {
+            get;
+            set;
+        }
+
+        protected int Attack
+        {
+            get;
+            set;
+        }
+        protected int Defence
+        {
+            get;
+            set;
+        }
+
+        protected int Health
+        {
+            get;
+            set;
+        }
+
+        protected int Speed
+        {
+            get;
+            set;
+        }
+
+        public float Attacking(Pokemon defender)
+        {
+            float levelDamage = ((2 * this.Level) / 5) + 2;
+            float modifier = Effectiveness(defender.Type);
+            float attackVsDefence = this.Attack / defender.Defence;
+            return ((levelDamage * attackVsDefence) / 50 + 2) * modifier;
+        }
 
         //Normal, Fire, Water, Ground, Flying
         private float Effectiveness(string dType)
         {
-            switch (this.type)
+            switch (this.Type)
             {
                 case "normal":
                 case "flying":
