@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Serialization;
+using System.Runtime.Serialization;
 using System.IO;
 
 namespace Softmon
@@ -15,6 +17,7 @@ namespace Softmon
     public partial class Main : Form
     {
         private List<Pokemon> Pokedex = new List<Pokemon>();
+        private Trainer Player = new Trainer("Hegar");
 
         public Main()
         {
@@ -24,34 +27,46 @@ namespace Softmon
         private void Main_Load(object sender, EventArgs e)
         {
             //Create Serializer
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Pokemon>));
+            DataContractSerializer pokedexSerializer = new DataContractSerializer(typeof(List<Pokemon>));
+            DataContractSerializer trainerSerializer = new DataContractSerializer(typeof(Trainer));
+
+            var pokedexFilePath = $@"{Environment.CurrentDirectory}\\Pokedex.xml";
+            var trainerFilePath = $@"{Environment.CurrentDirectory}\\Trainer.xml";
 
             try //Read file
             {
-                //Get file
-                StreamReader file = new StreamReader($@"{Environment.CurrentDirectory}\\Pokedex.xml");
-                
+                //Get Pokedex File
+                FileStream pokedexFile = new FileStream(pokedexFilePath, FileMode.Open);
+                FileStream trainerFile = new FileStream(trainerFilePath, FileMode.Open);
+
                 //Get data from file
-                Pokedex = (List<Pokemon>)serializer.Deserialize(file);
+                Pokedex = (List<Pokemon>)pokedexSerializer.ReadObject(pokedexFile);
+                Player = (Trainer)trainerSerializer.ReadObject(trainerFile);
 
                 //Close file
-                file.Close();
+                pokedexFile.Close();
+                trainerFile.Close();
             }
             catch //Create and fill File
             {
+                XmlWriterSettings settings = new XmlWriterSettings { Indent = true };
+
                 //Adding starting pokemons...
 
-                
                 //Create file
-                FileStream file = File.Create($"{Environment.CurrentDirectory}//Pokedex.xml");
+                XmlWriter pokedexFile = XmlWriter.Create(pokedexFilePath, settings);
+                XmlWriter trainerFile = XmlWriter.Create(trainerFilePath, settings);
 
                 //Set data in file
-                serializer.Serialize(file, Pokedex);
+                pokedexSerializer.WriteObject(pokedexFile, Pokedex);
+                trainerSerializer.WriteObject(trainerFile, Player);
 
                 //Close file and restart application
-                file.Close();
+                pokedexFile.Close();
+                trainerFile.Close();
                 Application.Restart();
             }
         }
+
     }
 }

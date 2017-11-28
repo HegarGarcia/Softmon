@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class_Trainer.cs" />
     <Compile Include="Pokemon Classes\Class_Pokemon_Fire.cs" />
     <Compile Include="Pokemon Classes\Class_Pokemon_Flying.cs" />
     <Compile Include="Pokemon Classes\Class_Pokemon_Ground.cs" />

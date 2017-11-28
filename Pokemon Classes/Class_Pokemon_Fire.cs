@@ -31,5 +31,10 @@ namespace Softmon
                     return 1;
             }
         }   
+
+        private void Evolve()
+        {
+
+        }
     }
 }
