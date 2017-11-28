@@ -16,6 +16,21 @@ namespace Softmon
             return ((levelDamage * attackVsDefence) / 50 + 2) * modifier;
         }
 
-        private float Effectiveness(string dType) => 1f;
+        private float Effectiveness(string dType)
+        {
+            switch (dType)
+            {
+                case "normal":
+                case "ground":
+                case "flying":
+                    return 1;
+                case "water":
+                case "fire":
+                    return 0.5f;
+                default:
+                    return 1;
+            }
+        }
+        
     }
 }
