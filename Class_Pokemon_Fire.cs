@@ -8,6 +8,15 @@ namespace Softmon
 {
     class PokemonFire : Pokemon
     {
+        public PokemonFire()
+        {
+            this.Attack = 10;
+            this.Defence = 15;
+            this.Speed = 2;
+            this.Health = 100;
+            this.Type = "fire";
+        }
+
         public float Attacking(Pokemon defender)
         {
             float levelDamage = ((2 * this.Level) / 5) + 2;

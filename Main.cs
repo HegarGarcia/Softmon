@@ -40,6 +40,7 @@ namespace Softmon
             catch //Create and fill File
             {
                 //Adding starting pokemons...
+
                 
                 //Create file
                 FileStream file = File.Create($"{Environment.CurrentDirectory}//Pokedex.xml");

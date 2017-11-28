@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class_Pokemon_Fire.cs" />
+    <Compile Include="Class_Pokemon_Flying.cs" />
+    <Compile Include="Class_Pokemon_Ground.cs" />
     <Compile Include="Class_Pokemon_Normal.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
