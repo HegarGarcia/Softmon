@@ -22,47 +22,39 @@ namespace Softmon
             set;
         }
 
-        protected string Type
+        protected internal string Type
         {
             get;
             set;
         }
 
-        protected int Level
+        protected internal int Level
         {
             get;
             set;
         }
 
-        protected int Attack
+        protected internal int Attack
         {
             get;
             set;
         }
-        protected int Defence
-        {
-            get;
-            set;
-        }
-
-        protected int Health
+        protected internal int Defence
         {
             get;
             set;
         }
 
-        protected int Speed
+        protected internal int Health
         {
             get;
             set;
         }
 
-        public float Attacking(Pokemon defender)
+        protected internal int Speed
         {
-            float levelDamage = ((2 * this.Level) / 5) + 2;
-            float modifier = Effectiveness(defender.Type);
-            float attackVsDefence = this.Attack / defender.Defence;
-            return ((levelDamage * attackVsDefence) / 50 + 2) * modifier;
+            get;
+            set;
         }
 
         //Normal, Fire, Water, Ground, Flying
