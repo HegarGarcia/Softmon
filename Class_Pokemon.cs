@@ -18,7 +18,7 @@ namespace Softmon
         protected int health;
         protected int speed;
 
-        public float Attack(Class_Pokemon defender)
+        public float Attack(Pokemon defender)
         {
             float levelDamage = ((2 * this.level) / 5) + 2;
             float modifier = Effectiveness(defender.type);
