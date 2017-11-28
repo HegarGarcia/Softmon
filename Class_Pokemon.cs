@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Softmon
 {
-    class Pokemon
+    [XmlInclude(typeof(PokemonNormal))]
+    public class Pokemon
     {
         
         protected string name;
@@ -27,7 +29,10 @@ namespace Softmon
             return ((levelDamage * attackVsDefence) / 50 + 2) * modifier;
         }
 
-        public string Name => this.name;
+        public string Name {
+            get;
+            set;
+        }
         public string Type => this.type;
         public int Level => this.level;
 
