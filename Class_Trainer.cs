@@ -39,6 +39,8 @@ namespace Softmon
             this.Name = nombre;
         }
 
+        public string a() => Name;
+
         
     }
 }

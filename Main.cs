@@ -19,6 +19,9 @@ namespace Softmon
         private List<Pokemon> Pokedex = new List<Pokemon>();
         private Trainer Player = new Trainer("Hegar");
 
+        public string pokedexFilePath = $@"{Environment.CurrentDirectory}\\Pokedex.xml";
+        public string trainerFilePath = $@"{Environment.CurrentDirectory}\\Trainer.xml";
+
         public Main()
         {
             InitializeComponent();
@@ -30,8 +33,8 @@ namespace Softmon
             DataContractSerializer pokedexSerializer = new DataContractSerializer(typeof(List<Pokemon>));
             DataContractSerializer trainerSerializer = new DataContractSerializer(typeof(Trainer));
 
-            var pokedexFilePath = $@"{Environment.CurrentDirectory}\\Pokedex.xml";
-            var trainerFilePath = $@"{Environment.CurrentDirectory}\\Trainer.xml";
+            bool pokedexExists = File.Exists(pokedexFilePath);
+            bool trainerExists = File.Exists(trainerFilePath);
 
             try //Read file
             {
@@ -51,22 +54,41 @@ namespace Softmon
             {
                 XmlWriterSettings settings = new XmlWriterSettings { Indent = true };
 
-                //Adding starting pokemons...
+                if (!pokedexExists) //Create Pokedex File and Set data to file
+                {
+                    MessageBox.Show("Creating Pokedex");
+                    //Adding starting pokemons...
 
-                //Create file
-                XmlWriter pokedexFile = XmlWriter.Create(pokedexFilePath, settings);
-                XmlWriter trainerFile = XmlWriter.Create(trainerFilePath, settings);
+                    XmlWriter pokedexFile = XmlWriter.Create(pokedexFilePath, settings);
+                    pokedexSerializer.WriteObject(pokedexFile, Pokedex);
+                    pokedexFile.Close();
+                }
 
-                //Set data in file
-                pokedexSerializer.WriteObject(pokedexFile, Pokedex);
-                trainerSerializer.WriteObject(trainerFile, Player);
+                if (!trainerExists) //Create Trainer File and Set data to file
+                {
+                    MessageBox.Show("Creating Trainer");
+                    XmlWriter trainerFile = XmlWriter.Create(trainerFilePath, settings);
+                    trainerSerializer.WriteObject(trainerFile, Player);
+                    trainerFile.Close();
+                }
 
-                //Close file and restart application
-                pokedexFile.Close();
-                trainerFile.Close();
                 Application.Restart();
             }
         }
 
+        
+        private void savingTimer_Tick(object sender, EventArgs e)
+        {
+            //Create Serializer and Settings
+            DataContractSerializer trainerSerializer = new DataContractSerializer(typeof(Trainer));
+            XmlWriterSettings settings = new XmlWriterSettings { Indent = true };
+
+            //Recreate file
+            XmlWriter trainerFile = XmlWriter.Create(trainerFilePath, settings);
+
+            //Put data in file and close file
+            trainerSerializer.WriteObject(trainerFile, Player);
+            trainerFile.Close();
+        }
     }
 }

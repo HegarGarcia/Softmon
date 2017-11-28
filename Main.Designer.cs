@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.savingTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // savingTimer
+            // 
+            this.savingTimer.Enabled = true;
+            this.savingTimer.Interval = 1000;
+            this.savingTimer.Tick += new System.EventHandler(this.savingTimer_Tick);
             // 
             // Main
             // 
@@ -48,6 +56,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer savingTimer;
     }
 }
 
