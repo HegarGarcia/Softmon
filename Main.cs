@@ -140,8 +140,6 @@ namespace Softmon
 
             Player = (form.player == null ? new Trainer("Ash", "Pueblo Paleta") : form.player);
 
-            Player.ChosePokemon(Pokedex);
-
             XmlWriter trainerFile = XmlWriter.Create(trainerFilePath, settings);
             serializer.WriteObject(trainerFile, Player);
             trainerFile.Close();
