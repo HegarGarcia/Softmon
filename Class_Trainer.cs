@@ -25,22 +25,16 @@ namespace Softmon
         }
 
         [DataMember]
-        private string Gender
+        public List<Pokemon> Pokemons
         {
             get;
-            set;
-        }
+        } = new List<Pokemon>();
 
-        [DataMember]
-        private List<Pokemon> Pokemons = new List<Pokemon>();
-
-        public Trainer(string nombre)
+        public Trainer(string nombre, string ciudad)
         {
             this.Name = nombre;
+            this.City = ciudad;
         }
 
-        public string a() => Name;
-
-        
     }
 }

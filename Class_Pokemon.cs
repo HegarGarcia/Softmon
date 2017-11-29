@@ -8,75 +8,71 @@ using System.Runtime.Serialization;
 
 namespace Softmon
 {
-    [XmlInclude(typeof(PokemonNormal))]
-    [XmlInclude(typeof(PokemonFire))]
-    [XmlInclude(typeof(PokemonWater))]
-    [XmlInclude(typeof(PokemonGround))]
-    [XmlInclude(typeof(PokemonGround))]
     [DataContract]
+    [KnownType(typeof(PokemonNormal))]
+    [KnownType(typeof(PokemonFire))]
+    [KnownType(typeof(PokemonFlying))]
+    [KnownType(typeof(PokemonGrass))]
+    [KnownType(typeof(PokemonWater))]
     public class Pokemon
     {
         [DataMember]
-        protected int Id
+        public string[] MoveSet = new string[2];
+
+        [DataMember]
+        public int Id
         {
             get;
             set;
         }
 
         [DataMember]
-        protected string Name
+        public string Name
         {
             get;
             set;
         }
 
         [DataMember]
-        protected internal string Type
+        public string Type
         {
             get;
             set;
         }
 
         [DataMember]
-        protected internal int Level
+        public int Level
         {
             get;
             set;
         }
 
         [DataMember]
-        protected internal int Attack
+        public int Attack
         {
             get;
             set;
         }
 
         [DataMember]
-        protected internal int Defence
+        public int SpAttack
         {
             get;
             set;
         }
 
         [DataMember]
-        protected internal int Health
+        public int Defense
         {
             get;
             set;
         }
 
         [DataMember]
-        protected internal int Speed
+        public int Health
         {
             get;
             set;
-        }
-
-        [DataMember]
-        protected internal int XP
-        {
-            get;
-            protected set;
         }
     }
 }
