@@ -45,6 +45,8 @@ namespace Softmon
             //Put data in file and close file
             trainerSerializer.WriteObject(trainerFile, Player);
             trainerFile.Close();
+
+            MessageBox.Show("Saved");
         }
 
         private void Initialize()
@@ -135,12 +137,16 @@ namespace Softmon
 
         private void CreateTrainer(DataContractSerializer serializer, XmlWriterSettings settings)
         {
-            var form = new Trainer_Registration();
-            form.ShowDialog();
+            var formCreateTrainer = new Trainer_Registration();
+            formCreateTrainer.ShowDialog();
 
-            Player = (form.player == null ? new Trainer("Ash", "Pueblo Paleta") : form.player);
+            Player = (formCreateTrainer.player == null ? new Trainer("Ash", "Pueblo Paleta") :
+                formCreateTrainer.player);
 
-            Player.ChosePokemon(Pokedex);
+            var formAddPokemon = new Choose_Pokemon(Pokedex);
+            formAddPokemon.ShowDialog();
+
+            Player.AddPokemons(formAddPokemon.choices);
 
             XmlWriter trainerFile = XmlWriter.Create(trainerFilePath, settings);
             serializer.WriteObject(trainerFile, Player);

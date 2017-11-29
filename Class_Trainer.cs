@@ -28,6 +28,7 @@ namespace Softmon
         public List<Pokemon> Pokemons
         {
             get;
+            private set;
         } = new List<Pokemon>();
 
         public Trainer(string nombre, string ciudad)
@@ -36,5 +37,9 @@ namespace Softmon
             this.City = ciudad;
         }
 
+        public void AddPokemons(List<Pokemon> PokemonList)
+        {
+            Pokemons = PokemonList;
+        }
     }
 }
