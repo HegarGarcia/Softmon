@@ -21,6 +21,9 @@ namespace Softmon
         private string pokedexFilePath = $@"{Environment.CurrentDirectory}\\Pokedex.xml";
         private string trainerFilePath = $@"{Environment.CurrentDirectory}\\Trainer.xml";
 
+        private DataContractSerializer pokedexSerializer = new DataContractSerializer(typeof(List<Pokemon>));
+        private DataContractSerializer trainerSerializer = new DataContractSerializer(typeof(Trainer));
+
         public Main()
         {
             InitializeComponent();
@@ -35,30 +38,15 @@ namespace Softmon
         
         private void savingTimer_Tick(object sender, EventArgs e)
         {
-            //Create Serializer and Settins
-            DataContractSerializer trainerSerializer = new DataContractSerializer(typeof(Trainer));
-            XmlWriterSettings settings = new XmlWriterSettings { Indent = true };
-
-            //Recreate file
-            XmlWriter trainerFile = XmlWriter.Create(trainerFilePath, settings);
-
-            //Put data in file and close file
-            trainerSerializer.WriteObject(trainerFile, Player);
-            trainerFile.Close();
-
-            MessageBox.Show("Saved");
+            saveTrainer();
         }
 
         private void Initialize()
         {
-            //Create Serializer
-            DataContractSerializer pokedexSerializer = new DataContractSerializer(typeof(List<Pokemon>));
-            DataContractSerializer trainerSerializer = new DataContractSerializer(typeof(Trainer));
-
             try //Read file
             {
-                LoadPokedex(pokedexSerializer);
-                LoadTrainer(trainerSerializer);
+                LoadPokedex();
+                LoadTrainer();
             }
             catch //Create and fill File
             {
@@ -67,41 +55,41 @@ namespace Softmon
                 bool trainerExists = File.Exists(trainerFilePath);
 
                 if (!pokedexExists) //Create Pokedex File and Set data to file
-                    CreatePokedex(pokedexSerializer, settings);
+                    CreatePokedex(settings);
 
                 if (!trainerExists) //Create Trainer File and Set data to file
-                    CreateTrainer(trainerSerializer, settings);
+                    CreateTrainer(settings);
 
                 this.Close();
                 Application.Restart();
             }
         }
 
-        public void LoadPokedex(DataContractSerializer serializer)
+        public void LoadPokedex()
         {
             //Get Pokedex File
             FileStream pokedexFile = new FileStream(pokedexFilePath, FileMode.Open);
 
             //Get data from file
-            Pokedex = (List<Pokemon>)serializer.ReadObject(pokedexFile);
+            Pokedex = (List<Pokemon>)pokedexSerializer.ReadObject(pokedexFile);
 
             //Close file
             pokedexFile.Close();
         }
 
-        public void LoadTrainer(DataContractSerializer serializer)
+        public void LoadTrainer()
         {
             //Get Pokedex File
             FileStream trainerFile = new FileStream(trainerFilePath, FileMode.Open);
 
             //Get data from file
-            Player = (Trainer)serializer.ReadObject(trainerFile);
+            Player = (Trainer)trainerSerializer.ReadObject(trainerFile);
 
             //Close file
             trainerFile.Close();
         }
 
-        private void CreatePokedex(DataContractSerializer serializer, XmlWriterSettings settings)
+        private void CreatePokedex(XmlWriterSettings settings)
         {
             //Adding starting pokemons...
             Pokemon bulbasaur = new PokemonGrass() { Name = "Bulbasaur", Health = 45,
@@ -131,11 +119,11 @@ namespace Softmon
 
 
             XmlWriter pokedexFile = XmlWriter.Create(pokedexFilePath, settings);
-            serializer.WriteObject(pokedexFile, Pokedex);
+            pokedexSerializer.WriteObject(pokedexFile, Pokedex);
             pokedexFile.Close();
         }
 
-        private void CreateTrainer(DataContractSerializer serializer, XmlWriterSettings settings)
+        private void CreateTrainer(XmlWriterSettings settings)
         {
             var formCreateTrainer = new Trainer_Registration();
             formCreateTrainer.ShowDialog();
@@ -149,7 +137,20 @@ namespace Softmon
             Player.AddPokemons(formAddPokemon.choices);
 
             XmlWriter trainerFile = XmlWriter.Create(trainerFilePath, settings);
-            serializer.WriteObject(trainerFile, Player);
+            trainerSerializer.WriteObject(trainerFile, Player);
+            trainerFile.Close();
+        }
+
+        private void saveTrainer()
+        {
+            //Create Settings
+            XmlWriterSettings settings = new XmlWriterSettings { Indent = true };
+
+            //Recreate file
+            XmlWriter trainerFile = XmlWriter.Create(trainerFilePath, settings);
+
+            //Put data in file and close file
+            trainerSerializer.WriteObject(trainerFile, Player);
             trainerFile.Close();
         }
 
