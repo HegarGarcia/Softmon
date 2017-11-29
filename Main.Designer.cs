@@ -50,7 +50,7 @@
             // 
             // savingTimer
             // 
-            this.savingTimer.Interval = 1000;
+            this.savingTimer.Interval = 10000;
             this.savingTimer.Tick += new System.EventHandler(this.savingTimer_Tick);
             // 
             // Normal_Attack

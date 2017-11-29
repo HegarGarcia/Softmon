@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Choose_Pokemon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Choose_Pokemon.Designer.cs">
+      <DependentUpon>Choose_Pokemon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class_Trainer.cs" />
     <Compile Include="Pokemon Classes\Class_Pokemon_Fire.cs" />
     <Compile Include="Pokemon Classes\Class_Pokemon_Flying.cs" />
@@ -67,6 +73,9 @@
     <Compile Include="Trainer Registration.Designer.cs">
       <DependentUpon>Trainer Registration.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Choose_Pokemon.resx">
+      <DependentUpon>Choose_Pokemon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
