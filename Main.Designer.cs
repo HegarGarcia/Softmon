@@ -34,22 +34,22 @@
             this.Normal_Attack = new System.Windows.Forms.Button();
             this.Special_Attack = new System.Windows.Forms.Button();
             this.Change_Pokemon = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Name_PC = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Name_Player = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.HP_PC = new System.Windows.Forms.ProgressBar();
             this.HP_Player = new System.Windows.Forms.ProgressBar();
             this.HPNumber_PC = new System.Windows.Forms.Label();
             this.HPNumber_Player = new System.Windows.Forms.Label();
-            this.playerPokemon = new System.Windows.Forms.PictureBox();
+            this.PlayerHPBack = new System.Windows.Forms.PictureBox();
             this.pcPokemon = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerPokemon)).BeginInit();
+            this.playerPokemon = new System.Windows.Forms.PictureBox();
+            this.PCHPBack = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PlayerHPBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcPokemon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerPokemon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PCHPBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // savingTimer
@@ -89,20 +89,10 @@
             this.Change_Pokemon.Text = "Change Pokemon";
             this.Change_Pokemon.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(622, 281);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // Name_PC
             // 
             this.Name_PC.AutoSize = true;
-            this.Name_PC.BackColor = System.Drawing.Color.White;
+            this.Name_PC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
             this.Name_PC.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_PC.Location = new System.Drawing.Point(17, 14);
             this.Name_PC.Name = "Name_PC";
@@ -110,20 +100,10 @@
             this.Name_PC.TabIndex = 4;
             this.Name_PC.Text = "Name";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(300, 90);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
-            // 
             // Name_Player
             // 
             this.Name_Player.AutoSize = true;
-            this.Name_Player.BackColor = System.Drawing.Color.White;
+            this.Name_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
             this.Name_Player.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_Player.Location = new System.Drawing.Point(324, 191);
             this.Name_Player.Name = "Name_Player";
@@ -131,35 +111,25 @@
             this.Name_Player.TabIndex = 7;
             this.Name_Player.Text = "Name";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Location = new System.Drawing.Point(315, 186);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(300, 90);
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
-            // 
             // HP_PC
             // 
-            this.HP_PC.Location = new System.Drawing.Point(12, 46);
+            this.HP_PC.Location = new System.Drawing.Point(120, 46);
             this.HP_PC.Name = "HP_PC";
-            this.HP_PC.Size = new System.Drawing.Size(290, 15);
+            this.HP_PC.Size = new System.Drawing.Size(173, 19);
             this.HP_PC.TabIndex = 9;
             // 
             // HP_Player
             // 
-            this.HP_Player.Location = new System.Drawing.Point(320, 223);
+            this.HP_Player.Location = new System.Drawing.Point(429, 225);
             this.HP_Player.Name = "HP_Player";
-            this.HP_Player.Size = new System.Drawing.Size(290, 15);
+            this.HP_Player.Size = new System.Drawing.Size(173, 19);
             this.HP_Player.TabIndex = 10;
             // 
             // HPNumber_PC
             // 
             this.HPNumber_PC.AutoSize = true;
-            this.HPNumber_PC.BackColor = System.Drawing.Color.White;
-            this.HPNumber_PC.Location = new System.Drawing.Point(253, 64);
+            this.HPNumber_PC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
+            this.HPNumber_PC.Location = new System.Drawing.Point(253, 74);
             this.HPNumber_PC.Name = "HPNumber_PC";
             this.HPNumber_PC.Size = new System.Drawing.Size(38, 13);
             this.HPNumber_PC.TabIndex = 11;
@@ -168,12 +138,33 @@
             // HPNumber_Player
             // 
             this.HPNumber_Player.AutoSize = true;
-            this.HPNumber_Player.BackColor = System.Drawing.Color.White;
-            this.HPNumber_Player.Location = new System.Drawing.Point(562, 241);
+            this.HPNumber_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
+            this.HPNumber_Player.Location = new System.Drawing.Point(563, 253);
             this.HPNumber_Player.Name = "HPNumber_Player";
             this.HPNumber_Player.Size = new System.Drawing.Size(38, 13);
             this.HPNumber_Player.TabIndex = 12;
             this.HPNumber_Player.Text = "Health";
+            // 
+            // PlayerHPBack
+            // 
+            this.PlayerHPBack.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerHPBack.BackgroundImage = global::Softmon.Properties.Resources.hpBackground;
+            this.PlayerHPBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PlayerHPBack.Location = new System.Drawing.Point(315, 186);
+            this.PlayerHPBack.Name = "PlayerHPBack";
+            this.PlayerHPBack.Size = new System.Drawing.Size(300, 90);
+            this.PlayerHPBack.TabIndex = 8;
+            this.PlayerHPBack.TabStop = false;
+            // 
+            // pcPokemon
+            // 
+            this.pcPokemon.BackColor = System.Drawing.Color.Transparent;
+            this.pcPokemon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pcPokemon.Location = new System.Drawing.Point(368, 44);
+            this.pcPokemon.Name = "pcPokemon";
+            this.pcPokemon.Size = new System.Drawing.Size(200, 142);
+            this.pcPokemon.TabIndex = 14;
+            this.pcPokemon.TabStop = false;
             // 
             // playerPokemon
             // 
@@ -187,15 +178,26 @@
             this.playerPokemon.TabIndex = 13;
             this.playerPokemon.TabStop = false;
             // 
-            // pcPokemon
+            // PCHPBack
             // 
-            this.pcPokemon.BackColor = System.Drawing.Color.Transparent;
-            this.pcPokemon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcPokemon.Location = new System.Drawing.Point(367, 19);
-            this.pcPokemon.Name = "pcPokemon";
-            this.pcPokemon.Size = new System.Drawing.Size(200, 200);
-            this.pcPokemon.TabIndex = 14;
-            this.pcPokemon.TabStop = false;
+            this.PCHPBack.BackColor = System.Drawing.Color.Transparent;
+            this.PCHPBack.BackgroundImage = global::Softmon.Properties.Resources.hpBackground;
+            this.PCHPBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PCHPBack.Location = new System.Drawing.Point(7, 7);
+            this.PCHPBack.Name = "PCHPBack";
+            this.PCHPBack.Size = new System.Drawing.Size(300, 90);
+            this.PCHPBack.TabIndex = 6;
+            this.PCHPBack.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(622, 281);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // Main
             // 
@@ -206,14 +208,14 @@
             this.Controls.Add(this.HPNumber_Player);
             this.Controls.Add(this.HP_Player);
             this.Controls.Add(this.Name_Player);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.PlayerHPBack);
             this.Controls.Add(this.Normal_Attack);
             this.Controls.Add(this.pcPokemon);
             this.Controls.Add(this.playerPokemon);
             this.Controls.Add(this.HPNumber_PC);
             this.Controls.Add(this.HP_PC);
             this.Controls.Add(this.Name_PC);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.PCHPBack);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Change_Pokemon);
             this.Controls.Add(this.Special_Attack);
@@ -227,11 +229,11 @@
             this.Text = "SOFTMON";
             this.Load += new System.EventHandler(this.Main_Load);
             this.Shown += new System.EventHandler(this.Main_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playerPokemon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlayerHPBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcPokemon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerPokemon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PCHPBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,9 +247,9 @@
         private System.Windows.Forms.Button Change_Pokemon;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Name_PC;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox PCHPBack;
         public System.Windows.Forms.Label Name_Player;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox PlayerHPBack;
         public System.Windows.Forms.ProgressBar HP_PC;
         public System.Windows.Forms.ProgressBar HP_Player;
         public System.Windows.Forms.Label HPNumber_PC;

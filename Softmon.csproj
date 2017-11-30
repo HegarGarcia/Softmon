@@ -106,7 +106,9 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\img\hpBackground.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bulbasaur_back.bmp" />
   </ItemGroup>
