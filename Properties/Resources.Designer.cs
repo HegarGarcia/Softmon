@@ -103,6 +103,16 @@ namespace Softmon.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hpBackground {
+            get {
+                object obj = ResourceManager.GetObject("hpBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pidgey {
             get {
                 object obj = ResourceManager.GetObject("pidgey", resourceCulture);

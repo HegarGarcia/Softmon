@@ -34,6 +34,8 @@ namespace Softmon
 
             playerPokemon.Parent = pictureBox1;
             pcPokemon.Parent = pictureBox1;
+            PCHPBack.Parent = pictureBox1;
+            PlayerHPBack.Parent = pictureBox1;
             pictureBox1.BackColor = Color.Transparent;
 
             savingTimer.Enabled = true;
