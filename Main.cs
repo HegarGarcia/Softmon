@@ -44,10 +44,78 @@ namespace Softmon
 
             savingTimer.Enabled = true;
         }
-        
+
+        private void Main_Shown(object sender, EventArgs e)
+        {
+            LoadPokemon(Player.currentPokemon, false);
+            LoadPokemon(PC.currentPokemon, true);
+        }
+
+        private void Normal_Attack_Click(object sender, EventArgs e)
+        {
+            switch (Player.currentPokemon.Type)
+            {
+                case "fire":
+                    PokemonFire fire = Player.currentPokemon as PokemonFire;
+                    fire.Attacking(PC.currentPokemon);
+                    break;
+                case "flying":
+                    PokemonFlying fly = Player.currentPokemon as PokemonFlying;
+                    fly.Attacking(PC.currentPokemon);
+                    break;
+                case "grass":
+                    PokemonGrass grass = Player.currentPokemon as PokemonGrass;
+                    grass.Attacking(PC.currentPokemon);
+                    break;
+                case "normal":
+                    PokemonNormal normal = Player.currentPokemon as PokemonNormal;
+                    normal.Attacking(PC.currentPokemon);
+                    break;
+                case "water":
+                    PokemonWater water = Player.currentPokemon as PokemonWater;
+                    water.Attacking(PC.currentPokemon);
+                    break;
+                default:
+                    break;
+            }
+            MessageBox.Show(Player.currentPokemon.Name + " used " + Player.currentPokemon.MoveSet[0] + "!");
+            LoadPokemon(PC.currentPokemon, true);
+        }
+
+        private void Special_Attack_Click(object sender, EventArgs e)
+        {
+            switch (Player.currentPokemon.Type)
+            {
+                case "fire":
+                    PokemonFire fire = Player.currentPokemon as PokemonFire;
+                    fire.SpAttacking(PC.currentPokemon);
+                    break;
+                case "flying":
+                    PokemonFlying fly = Player.currentPokemon as PokemonFlying;
+                    fly.SpAttacking(PC.currentPokemon);
+                    break;
+                case "grass":
+                    PokemonGrass grass = Player.currentPokemon as PokemonGrass;
+                    grass.SpAttacking(PC.currentPokemon);
+                    break;
+                case "normal":
+                    PokemonNormal normal = Player.currentPokemon as PokemonNormal;
+                    normal.SpAttacking(PC.currentPokemon);
+                    break;
+                case "water":
+                    PokemonWater water = Player.currentPokemon as PokemonWater;
+                    water.SpAttacking(PC.currentPokemon);
+                    break;
+                default:
+                    break;
+            }
+            MessageBox.Show(Player.currentPokemon.Name + " used " + Player.currentPokemon.MoveSet[1] + "!");
+            LoadPokemon(PC.currentPokemon, true);
+        }
+
         private void savingTimer_Tick(object sender, EventArgs e)
         {
-            saveTrainer();
+            SaveTrainer();
         }
 
         private void Initialize()
@@ -97,6 +165,58 @@ namespace Softmon
 
             //Close file
             trainerFile.Close();
+        }
+
+        private void LoadPokemon(Pokemon poke, bool isPc)
+        {
+            if (!isPc)
+            {
+                HP_Player.Maximum = poke.MaxHealth;
+                HP_Player.Minimum = 0;
+                HP_Player.Value = poke.Health;
+                Name_Player.Text = poke.Name;
+                HPNumber_Player.Text = $"{poke.Health}/{poke.MaxHealth}";
+            }
+            else
+            {
+                HP_PC.Maximum = poke.MaxHealth;
+                HP_PC.Minimum = 0;
+                HP_PC.Value = poke.Health;
+                Name_PC.Text = poke.Name;
+                HPNumber_PC.Text = $"{poke.Health}/{poke.MaxHealth}";
+            }
+            LoadPokemonImage(poke.Name, isPc);
+        }
+
+        private void LoadPokemonImage(string pokemonName, bool isPC)
+        {
+            switch (pokemonName.ToLower())
+            {
+                case "bulbasaur":
+                    if(!isPC) playerPokemon.BackgroundImage = Properties.Resources.bulbasaur_back;
+                    else pcPokemon.BackgroundImage = Properties.Resources.bulbasaur;
+                    break;
+                case "squirtle":
+                    if (!isPC) playerPokemon.BackgroundImage = Properties.Resources.squirtle_back;
+                    else pcPokemon.BackgroundImage = Properties.Resources.squirtle;
+                    break;
+                case "charmander":
+                    if (!isPC) playerPokemon.BackgroundImage = Properties.Resources.charmander_back;
+                    else pcPokemon.BackgroundImage = Properties.Resources.charmander;
+                    break;
+                case "pidgey":
+                    if (!isPC) playerPokemon.BackgroundImage = Properties.Resources.pidgey_back;
+                    else pcPokemon.BackgroundImage = Properties.Resources.pidgey;
+                    break;
+                case "spearow":
+                    if (!isPC) playerPokemon.BackgroundImage = Properties.Resources.spearow_back;
+                    else pcPokemon.BackgroundImage = Properties.Resources.spearow;
+                    break;
+                case "rattata":
+                    if (!isPC) playerPokemon.BackgroundImage = Properties.Resources.rattata_back;
+                    else pcPokemon.BackgroundImage = Properties.Resources.rattata;
+                    break;
+            }
         }
 
         private void CreatePokedex(XmlWriterSettings settings)
@@ -198,7 +318,7 @@ namespace Softmon
             trainerFile.Close();
         }
 
-        private void saveTrainer()
+        private void SaveTrainer()
         {
             //Create Settings
             XmlWriterSettings settings = new XmlWriterSettings { Indent = true };
@@ -225,74 +345,6 @@ namespace Softmon
             PC.AddPokemons(temp);
         }
 
-        private void Main_Shown(object sender, EventArgs e)
-        {
-            LoadPokemon(Player.currentPokemon, false);
-            LoadPokemon(PC.currentPokemon, true);
-        }
-
-        private void LoadPokemon(Pokemon poke, bool isPc)
-        {
-            if (!isPc)
-            {
-                HP_Player.Maximum = poke.MaxHealth;
-                HP_Player.Minimum = 0;
-                HP_Player.Value = poke.Health;
-                Name_Player.Text = poke.Name;
-                HPNumber_Player.Text = $"{poke.Health}/{poke.MaxHealth}";
-                switch (poke.Name)
-                {
-                    case "Bulbasaur":
-                        playerPokemon.BackgroundImage = Properties.Resources.bulbasaur_back;
-                        break;
-                    case "Squirtle":
-                        playerPokemon.BackgroundImage = Properties.Resources.squirtle_back;
-                        break;
-                    case "Charmander":
-                        playerPokemon.BackgroundImage = Properties.Resources.charmander_back;
-                        break;
-                    case "Pidgey":
-                        playerPokemon.BackgroundImage = Properties.Resources.pidgey_back;
-                        break;
-                    case "Spearow":
-                        playerPokemon.BackgroundImage = Properties.Resources.spearow_back;
-                        break;
-                    case "Rattata":
-                        playerPokemon.BackgroundImage = Properties.Resources.rattata_back;
-                        break;
-                }
-            }
-            else
-            {
-                HP_PC.Maximum = poke.MaxHealth;
-                HP_PC.Minimum = 0;
-                HP_PC.Value = poke.Health;
-                Name_PC.Text = poke.Name;
-                HPNumber_PC.Text = $"{poke.Health}/{poke.MaxHealth}";
-                switch (poke.Name)
-                {
-                    case "Bulbasaur":
-                        pcPokemon.BackgroundImage = Properties.Resources.bulbasaur;
-                        break;
-                    case "Squirtle":
-                        pcPokemon.BackgroundImage = Properties.Resources.squirtle;
-                        break;
-                    case "Charmander":
-                        pcPokemon.BackgroundImage = Properties.Resources.charmander;
-                        break;
-                    case "Pidgey":
-                        pcPokemon.BackgroundImage = Properties.Resources.pidgey;
-                        break;
-                    case "Spearow":
-                        pcPokemon.BackgroundImage = Properties.Resources.spearow;
-                        break;
-                    case "Rattata":
-                        pcPokemon.BackgroundImage = Properties.Resources.rattata;
-                        break;
-                }
-            }
-        }
-
         private void ChangePokemon(bool isPc)
         {
             if (!isPc)
@@ -303,68 +355,6 @@ namespace Softmon
             {
 
             }
-        }
-
-        private void Normal_Attack_Click(object sender, EventArgs e)
-        {
-            switch (Player.currentPokemon.Type)
-            {
-                case "fire":
-                    PokemonFire fire = Player.currentPokemon as PokemonFire;
-                    fire.Attacking(PC.currentPokemon);
-                    break;
-                case "flying":
-                    PokemonFlying fly = Player.currentPokemon as PokemonFlying;
-                    fly.Attacking(PC.currentPokemon);
-                    break;
-                case "grass":
-                    PokemonGrass grass = Player.currentPokemon as PokemonGrass;
-                    grass.Attacking(PC.currentPokemon);
-                    break;
-                case "normal":
-                    PokemonNormal normal = Player.currentPokemon as PokemonNormal;
-                    normal.Attacking(PC.currentPokemon);
-                    break;
-                case "water":
-                    PokemonWater water = Player.currentPokemon as PokemonWater;
-                    water.Attacking(PC.currentPokemon);
-                    break;
-                default:
-                    break;
-            }
-            MessageBox.Show(Player.currentPokemon.Name + " used " + Player.currentPokemon.MoveSet[0] + "!");
-            LoadPokemon(PC.currentPokemon, true);
-        }
-
-        private void Special_Attack_Click(object sender, EventArgs e)
-        {
-            switch (Player.currentPokemon.Type)
-            {
-                case "fire":
-                    PokemonFire fire = Player.currentPokemon as PokemonFire;
-                    fire.SpAttacking(PC.currentPokemon);
-                    break;
-                case "flying":
-                    PokemonFlying fly = Player.currentPokemon as PokemonFlying;
-                    fly.SpAttacking(PC.currentPokemon);
-                    break;
-                case "grass":
-                    PokemonGrass grass = Player.currentPokemon as PokemonGrass;
-                    grass.SpAttacking(PC.currentPokemon);
-                    break;
-                case "normal":
-                    PokemonNormal normal = Player.currentPokemon as PokemonNormal;
-                    normal.SpAttacking(PC.currentPokemon);
-                    break;
-                case "water":
-                    PokemonWater water = Player.currentPokemon as PokemonWater;
-                    water.SpAttacking(PC.currentPokemon);
-                    break;
-                default:
-                    break;
-            }
-            MessageBox.Show(Player.currentPokemon.Name + " used " + Player.currentPokemon.MoveSet[1] + "!");
-            LoadPokemon(PC.currentPokemon, true);
         }
     }
 }
