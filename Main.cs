@@ -41,6 +41,18 @@ namespace Softmon
             Normal_Attack.MouseLeave += OnMouseLeaveButton1;
             Special_Attack.MouseEnter += OnMouseEnterButton2;
             Special_Attack.MouseLeave += OnMouseLeaveButton2;
+            Change_Pokemon.MouseEnter += OnMouseEnterChangeP;
+            Change_Pokemon.MouseLeave += OnMouseLeaveChangeP;
+        }
+
+        private void OnMouseEnterChangeP(object sender, EventArgs e)
+        {
+            Change_Pokemon.BackgroundImage = Properties.Resources.change_hover;
+        }
+
+        private void OnMouseLeaveChangeP(object sender, EventArgs e)
+        {
+            Change_Pokemon.BackgroundImage = Properties.Resources.change;
         }
 
         private void OnMouseEnterButton1(object sender, EventArgs e)
@@ -51,7 +63,6 @@ namespace Softmon
         {
             Normal_Attack.BackgroundImage = Properties.Resources.button_back;
         }
-
         private void OnMouseEnterButton2(object sender, EventArgs e)
         {
             Special_Attack.BackgroundImage = Properties.Resources.button_back_hover;

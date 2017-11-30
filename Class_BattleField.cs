@@ -24,7 +24,7 @@ namespace Softmon
             FileStream pokedexFile = new FileStream(pokedexFilePath, FileMode.Open);
 
             //Get data from file
-            List<Pokemon> Pokedex = (List<Pokemon>)pokedexSerializer.ReadObject(pokedexFile);
+            List<Pokemon> Pokedex = (List<Pokemon>)pokedexSerializer.ReadObject( pokedexFile);
 
             //Close file
             pokedexFile.Close();

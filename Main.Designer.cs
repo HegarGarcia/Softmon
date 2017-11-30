@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-
             this.Change_Pokemon = new System.Windows.Forms.Button();
             this.Name_PC = new System.Windows.Forms.Label();
             this.Name_Player = new System.Windows.Forms.Label();
@@ -55,22 +54,31 @@
             // 
             // Change_Pokemon
             // 
+            this.Change_Pokemon.BackColor = System.Drawing.Color.Transparent;
+            this.Change_Pokemon.BackgroundImage = global::Softmon.Properties.Resources.change;
+            this.Change_Pokemon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Change_Pokemon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Change_Pokemon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Change_Pokemon.ForeColor = System.Drawing.Color.White;
             this.Change_Pokemon.Location = new System.Drawing.Point(512, 280);
             this.Change_Pokemon.Name = "Change_Pokemon";
+            this.Change_Pokemon.Padding = new System.Windows.Forms.Padding(0, 0, 0, 50);
             this.Change_Pokemon.Size = new System.Drawing.Size(110, 160);
             this.Change_Pokemon.TabIndex = 1;
-            this.Change_Pokemon.Text = "Change Pokemon";
-            this.Change_Pokemon.UseVisualStyleBackColor = true;
+            this.Change_Pokemon.TabStop = false;
+            this.Change_Pokemon.Text = " ";
+            this.Change_Pokemon.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Change_Pokemon.UseVisualStyleBackColor = false;
             this.Change_Pokemon.Click += new System.EventHandler(this.Change_Pokemon_Click);
             // 
             // Name_PC
             // 
             this.Name_PC.AutoSize = true;
             this.Name_PC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
-            this.Name_PC.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_PC.Font = new System.Drawing.Font("Pokemon Pixel Font", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_PC.Location = new System.Drawing.Point(17, 14);
             this.Name_PC.Name = "Name_PC";
-            this.Name_PC.Size = new System.Drawing.Size(64, 28);
+            this.Name_PC.Size = new System.Drawing.Size(60, 25);
             this.Name_PC.TabIndex = 4;
             this.Name_PC.Text = "Name";
             // 
@@ -78,10 +86,10 @@
             // 
             this.Name_Player.AutoSize = true;
             this.Name_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
-            this.Name_Player.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_Player.Font = new System.Drawing.Font("Pokemon Pixel Font", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_Player.Location = new System.Drawing.Point(324, 191);
             this.Name_Player.Name = "Name_Player";
-            this.Name_Player.Size = new System.Drawing.Size(64, 28);
+            this.Name_Player.Size = new System.Drawing.Size(60, 25);
             this.Name_Player.TabIndex = 7;
             this.Name_Player.Text = "Name";
             // 
@@ -103,9 +111,10 @@
             // 
             this.HPNumber_PC.AutoSize = true;
             this.HPNumber_PC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
+            this.HPNumber_PC.Font = new System.Drawing.Font("Pokemon Pixel Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HPNumber_PC.Location = new System.Drawing.Point(253, 74);
             this.HPNumber_PC.Name = "HPNumber_PC";
-            this.HPNumber_PC.Size = new System.Drawing.Size(38, 13);
+            this.HPNumber_PC.Size = new System.Drawing.Size(39, 14);
             this.HPNumber_PC.TabIndex = 11;
             this.HPNumber_PC.Text = "Health";
             // 
@@ -113,9 +122,10 @@
             // 
             this.HPNumber_Player.AutoSize = true;
             this.HPNumber_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
+            this.HPNumber_Player.Font = new System.Drawing.Font("Pokemon Pixel Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HPNumber_Player.Location = new System.Drawing.Point(563, 253);
             this.HPNumber_Player.Name = "HPNumber_Player";
-            this.HPNumber_Player.Size = new System.Drawing.Size(38, 13);
+            this.HPNumber_Player.Size = new System.Drawing.Size(39, 14);
             this.HPNumber_Player.TabIndex = 12;
             this.HPNumber_Player.Text = "Health";
             // 
@@ -127,6 +137,7 @@
             this.Normal_Attack.BackColor = System.Drawing.Color.Transparent;
             this.Normal_Attack.BackgroundImage = global::Softmon.Properties.Resources.button_back;
             this.Normal_Attack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Normal_Attack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Normal_Attack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Normal_Attack.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Normal_Attack.Location = new System.Drawing.Point(0, 280);
@@ -134,6 +145,7 @@
             this.Normal_Attack.Name = "Normal_Attack";
             this.Normal_Attack.Size = new System.Drawing.Size(256, 160);
             this.Normal_Attack.TabIndex = 3;
+            this.Normal_Attack.TabStop = false;
             this.Normal_Attack.Text = "Normal Attack";
             this.Normal_Attack.UseVisualStyleBackColor = false;
             this.Normal_Attack.Click += new System.EventHandler(this.Normal_Attack_Click);
@@ -142,12 +154,14 @@
             // 
             this.Special_Attack.BackgroundImage = global::Softmon.Properties.Resources.button_back;
             this.Special_Attack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Special_Attack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Special_Attack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Special_Attack.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Special_Attack.Location = new System.Drawing.Point(256, 280);
             this.Special_Attack.Name = "Special_Attack";
             this.Special_Attack.Size = new System.Drawing.Size(256, 160);
             this.Special_Attack.TabIndex = 2;
+            this.Special_Attack.TabStop = false;
             this.Special_Attack.Text = "Special Attack";
             this.Special_Attack.UseVisualStyleBackColor = true;
             this.Special_Attack.Click += new System.EventHandler(this.Special_Attack_Click);
