@@ -41,8 +41,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.HP_PC = new System.Windows.Forms.ProgressBar();
             this.HP_Player = new System.Windows.Forms.ProgressBar();
-            this.hpNum1 = new System.Windows.Forms.Label();
-            this.hpNum2 = new System.Windows.Forms.Label();
+            this.HPNumber_PC = new System.Windows.Forms.Label();
+            this.HPNumber_Player = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -149,25 +149,25 @@
             this.HP_Player.Size = new System.Drawing.Size(290, 15);
             this.HP_Player.TabIndex = 10;
             // 
-            // hpNum1
+            // HPNumber_PC
             // 
-            this.hpNum1.AutoSize = true;
-            this.hpNum1.BackColor = System.Drawing.Color.White;
-            this.hpNum1.Location = new System.Drawing.Point(253, 64);
-            this.hpNum1.Name = "hpNum1";
-            this.hpNum1.Size = new System.Drawing.Size(35, 13);
-            this.hpNum1.TabIndex = 11;
-            this.hpNum1.Text = "label3";
+            this.HPNumber_PC.AutoSize = true;
+            this.HPNumber_PC.BackColor = System.Drawing.Color.White;
+            this.HPNumber_PC.Location = new System.Drawing.Point(253, 64);
+            this.HPNumber_PC.Name = "HPNumber_PC";
+            this.HPNumber_PC.Size = new System.Drawing.Size(38, 13);
+            this.HPNumber_PC.TabIndex = 11;
+            this.HPNumber_PC.Text = "Health";
             // 
-            // hpNum2
+            // HPNumber_Player
             // 
-            this.hpNum2.AutoSize = true;
-            this.hpNum2.BackColor = System.Drawing.Color.White;
-            this.hpNum2.Location = new System.Drawing.Point(562, 241);
-            this.hpNum2.Name = "hpNum2";
-            this.hpNum2.Size = new System.Drawing.Size(35, 13);
-            this.hpNum2.TabIndex = 12;
-            this.hpNum2.Text = "label4";
+            this.HPNumber_Player.AutoSize = true;
+            this.HPNumber_Player.BackColor = System.Drawing.Color.White;
+            this.HPNumber_Player.Location = new System.Drawing.Point(562, 241);
+            this.HPNumber_Player.Name = "HPNumber_Player";
+            this.HPNumber_Player.Size = new System.Drawing.Size(38, 13);
+            this.HPNumber_Player.TabIndex = 12;
+            this.HPNumber_Player.Text = "Health";
             // 
             // Main
             // 
@@ -175,8 +175,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(624, 441);
-            this.Controls.Add(this.hpNum2);
-            this.Controls.Add(this.hpNum1);
+            this.Controls.Add(this.HPNumber_Player);
+            this.Controls.Add(this.HPNumber_PC);
             this.Controls.Add(this.HP_Player);
             this.Controls.Add(this.HP_PC);
             this.Controls.Add(this.Name_Player);
@@ -196,6 +196,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SOFTMON";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.Shown += new System.EventHandler(this.Main_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -217,8 +218,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.ProgressBar HP_PC;
         public System.Windows.Forms.ProgressBar HP_Player;
-        public System.Windows.Forms.Label hpNum1;
-        public System.Windows.Forms.Label hpNum2;
+        public System.Windows.Forms.Label HPNumber_PC;
+        public System.Windows.Forms.Label HPNumber_Player;
     }
 }
 

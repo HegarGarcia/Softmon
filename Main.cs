@@ -16,7 +16,8 @@ namespace Softmon
     public partial class Main : Form
     {
         private List<Pokemon> Pokedex = new List<Pokemon>();
-        private Trainer Player = null;
+        private Trainer Player = new Trainer();
+        private Trainer PC = new Trainer();
 
         private string pokedexFilePath = $@"{Environment.CurrentDirectory}\\Pokedex.xml";
         private string trainerFilePath = $@"{Environment.CurrentDirectory}\\Trainer.xml";
@@ -35,8 +36,6 @@ namespace Softmon
         {
             Initialize(); //Carga Trainer y Pokedex a Memoria
 
-
-
             savingTimer.Enabled = true;
         }
         
@@ -47,10 +46,11 @@ namespace Softmon
 
         private void Initialize()
         {
-            try //Read file
+            try //Read files and create PC Player
             {
                 LoadPokedex();
                 LoadTrainer();
+                CreatePC();
             }
             catch //Create and fill File
             {
@@ -100,6 +100,7 @@ namespace Softmon
             {
                 Name = "Bulbasaur",
                 Health = 45,
+                MaxHealth = 45,
                 Attack = 49,
                 Defense = 49,
                 SpAttack = 65,
@@ -110,6 +111,7 @@ namespace Softmon
             {
                 Name = "Charmander",
                 Health = 39,
+                MaxHealth = 39,
                 Attack = 52,
                 Defense = 43,
                 SpAttack = 60,
@@ -120,6 +122,7 @@ namespace Softmon
             {
                 Name = "Squirtle",
                 Health = 44,
+                MaxHealth = 44,
                 Attack = 48,
                 Defense = 65,
                 SpAttack = 50,
@@ -130,6 +133,7 @@ namespace Softmon
             {
                 Name = "Pidgey",
                 Health = 40,
+                MaxHealth = 40,
                 Attack = 45,
                 Defense = 40,
                 SpAttack = 35,
@@ -140,6 +144,7 @@ namespace Softmon
             {
                 Name = "Rattata",
                 Health = 30,
+                MaxHealth = 30,
                 Attack = 56,
                 Defense = 35,
                 SpAttack = 25,
@@ -150,6 +155,7 @@ namespace Softmon
             {
                 Name = "Spearow",
                 Health = 40,
+                MaxHealth = 40,
                 Attack = 60,
                 Defense = 30,
                 SpAttack = 31,
@@ -199,5 +205,44 @@ namespace Softmon
             trainerFile.Close();
         }
 
+        private void CreatePC()
+        {
+            PC = new Trainer("PC", "Intel");
+
+            List<Pokemon> temp = new List<Pokemon>();
+
+            while(temp.Count < 3)
+            {
+                temp.Add(Pokedex[rnd.Next(0, 6)]);
+            }
+
+            PC.AddPokemons(temp);
+        }
+
+        private void Main_Shown(object sender, EventArgs e)
+        {
+            LoadPokemon(Player.currentPokemon, false);
+            LoadPokemon(PC.currentPokemon, true);
+        }
+
+        private void LoadPokemon(Pokemon poke, bool isPc)
+        {
+            if (!isPc)
+            {
+                HP_Player.Maximum = poke.MaxHealth;
+                HP_Player.Minimum = 0;
+                HP_Player.Value = poke.Health;
+                Name_Player.Text = poke.Name;
+                HPNumber_Player.Text = $"{poke.Health}/{poke.MaxHealth}";
+            }
+            else
+            {
+                HP_PC.Maximum = poke.MaxHealth;
+                HP_PC.Minimum = 0;
+                HP_PC.Value = poke.Health;
+                Name_PC.Text = poke.Name;
+                HPNumber_PC.Text = $"{poke.Health}/{poke.MaxHealth}";
+            }
+        }
     }
 }
