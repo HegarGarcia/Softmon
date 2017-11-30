@@ -13,8 +13,8 @@ namespace Softmon
             this.Type = "normal";
             this.Level = 1;
             this.MaxHealth = this.Health;
-            this.MoveSet[0] = "tacle";
-            this.MoveSet[1] = "scratch";
+            this.MoveSet[0] = "Tackle";
+            this.MoveSet[1] = "Scratch";
         }
 
         public void Attacking(Pokemon defender)
