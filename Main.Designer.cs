@@ -43,9 +43,13 @@
             this.HP_Player = new System.Windows.Forms.ProgressBar();
             this.HPNumber_PC = new System.Windows.Forms.Label();
             this.HPNumber_Player = new System.Windows.Forms.Label();
+            this.playerPokemon = new System.Windows.Forms.PictureBox();
+            this.pcPokemon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerPokemon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcPokemon)).BeginInit();
             this.SuspendLayout();
             // 
             // savingTimer
@@ -169,6 +173,28 @@
             this.HPNumber_Player.TabIndex = 12;
             this.HPNumber_Player.Text = "Health";
             // 
+            // playerPokemon
+            // 
+            this.playerPokemon.BackColor = System.Drawing.Color.Transparent;
+            this.playerPokemon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.playerPokemon.Location = new System.Drawing.Point(56, 125);
+            this.playerPokemon.Margin = new System.Windows.Forms.Padding(0);
+            this.playerPokemon.Name = "playerPokemon";
+            this.playerPokemon.Size = new System.Drawing.Size(200, 200);
+            this.playerPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.playerPokemon.TabIndex = 13;
+            this.playerPokemon.TabStop = false;
+            // 
+            // pcPokemon
+            // 
+            this.pcPokemon.BackColor = System.Drawing.Color.Transparent;
+            this.pcPokemon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcPokemon.Location = new System.Drawing.Point(367, 19);
+            this.pcPokemon.Name = "pcPokemon";
+            this.pcPokemon.Size = new System.Drawing.Size(200, 200);
+            this.pcPokemon.TabIndex = 14;
+            this.pcPokemon.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,17 +202,19 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.HPNumber_Player);
-            this.Controls.Add(this.HPNumber_PC);
             this.Controls.Add(this.HP_Player);
-            this.Controls.Add(this.HP_PC);
             this.Controls.Add(this.Name_Player);
             this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.Normal_Attack);
+            this.Controls.Add(this.pcPokemon);
+            this.Controls.Add(this.playerPokemon);
+            this.Controls.Add(this.HPNumber_PC);
+            this.Controls.Add(this.HP_PC);
             this.Controls.Add(this.Name_PC);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Change_Pokemon);
             this.Controls.Add(this.Special_Attack);
-            this.Controls.Add(this.Normal_Attack);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -200,6 +228,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerPokemon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcPokemon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,6 +250,8 @@
         public System.Windows.Forms.ProgressBar HP_Player;
         public System.Windows.Forms.Label HPNumber_PC;
         public System.Windows.Forms.Label HPNumber_Player;
+        private System.Windows.Forms.PictureBox playerPokemon;
+        private System.Windows.Forms.PictureBox pcPokemon;
     }
 }
 
