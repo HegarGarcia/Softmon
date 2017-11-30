@@ -1,2 +1,2 @@
 # Softmon
-Pinche juego de pokemon culero la neta
+Intento de Pokemon!
