@@ -71,7 +71,7 @@
             this.Controls.Add(this.Pokemon3);
             this.Controls.Add(this.Pokemon2);
             this.Controls.Add(this.Pokemon1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Change_Pokemon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambia de Pokemon";
