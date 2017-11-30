@@ -78,6 +78,7 @@
             this.Special_Attack.TabIndex = 1;
             this.Special_Attack.Text = "Special Attack";
             this.Special_Attack.UseVisualStyleBackColor = true;
+            this.Special_Attack.Click += new System.EventHandler(this.Special_Attack_Click);
             // 
             // Change_Pokemon
             // 
