@@ -23,7 +23,7 @@ namespace Softmon
             float levelDamage = ((2 * this.Level) / 5) + 2;
             float modifier = Effectiveness(defender.Type);
             float attackVsDefence = this.Attack / defender.Defense;
-            int damage = (int)(((levelDamage * attackVsDefence) / 50 + 2 + rnd.Next(0, 8)) * modifier);
+            int damage = (int)(((levelDamage * attackVsDefence) / 50 + 2 + rnd.Next(1, 8)) * modifier);
             defender.Health = (defender.Health - damage <= 0 ? 0 : defender.Health - damage);
         }
 
@@ -32,7 +32,7 @@ namespace Softmon
             float levelDamage = ((2 * this.Level) / 5) + 2;
             float modifier = Effectiveness(defender.Type);
             float attackVsDefence = this.Attack / defender.Defense;
-            int damage = (int)(((levelDamage * attackVsDefence * this.SpAttack) / 50 + 2 + rnd.Next(0, 8)) * modifier);
+            int damage = (int)(((levelDamage * attackVsDefence * this.SpAttack) / 50 + 2 + rnd.Next(1, 8)) * modifier);
             defender.Health = (defender.Health - damage <= 0 ? 0 : defender.Health - damage);
         }
 
