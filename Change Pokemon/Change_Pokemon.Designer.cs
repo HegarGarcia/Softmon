@@ -40,6 +40,7 @@
             this.Pokemon1.Size = new System.Drawing.Size(75, 75);
             this.Pokemon1.TabIndex = 0;
             this.Pokemon1.Text = "Pokemon 1";
+            this.Pokemon1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.Pokemon1.UseVisualStyleBackColor = true;
             this.Pokemon1.Click += new System.EventHandler(this.Pokemon1_Click);
             // 
@@ -50,6 +51,7 @@
             this.Pokemon2.Size = new System.Drawing.Size(75, 75);
             this.Pokemon2.TabIndex = 1;
             this.Pokemon2.Text = "Pokemon 2";
+            this.Pokemon2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.Pokemon2.UseVisualStyleBackColor = true;
             this.Pokemon2.Click += new System.EventHandler(this.Pokemon2_Click);
             // 
@@ -60,6 +62,7 @@
             this.Pokemon3.Size = new System.Drawing.Size(75, 75);
             this.Pokemon3.TabIndex = 2;
             this.Pokemon3.Text = "Pokemon 3";
+            this.Pokemon3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.Pokemon3.UseVisualStyleBackColor = true;
             this.Pokemon3.Click += new System.EventHandler(this.Pokemon3_Click);
             // 

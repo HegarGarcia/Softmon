@@ -36,8 +36,32 @@ namespace Softmon
             PCHPBack.Parent = pictureBox1;
             PlayerHPBack.Parent = pictureBox1;
             pictureBox1.BackColor = Color.Transparent;
+            
 
             savingTimer.Enabled = true;
+
+            Normal_Attack.MouseEnter += OnMouseEnterButton1;
+            Normal_Attack.MouseLeave += OnMouseLeaveButton1;
+            Special_Attack.MouseEnter += OnMouseEnterButton2;
+            Special_Attack.MouseLeave += OnMouseLeaveButton2;
+        }
+
+        private void OnMouseEnterButton1(object sender, EventArgs e)
+        {
+            Normal_Attack.BackgroundImage = Properties.Resources.button_back_hover;
+        }
+        private void OnMouseLeaveButton1(object sender, EventArgs e)
+        {
+            Normal_Attack.BackgroundImage = Properties.Resources.button_back;
+        }
+
+        private void OnMouseEnterButton2(object sender, EventArgs e)
+        {
+            Special_Attack.BackgroundImage = Properties.Resources.button_back_hover;
+        }
+        private void OnMouseLeaveButton2(object sender, EventArgs e)
+        {
+            Special_Attack.BackgroundImage = Properties.Resources.button_back;
         }
 
         private void Main_Shown(object sender, EventArgs e)
@@ -190,6 +214,8 @@ namespace Softmon
                 HP_Player.Value = poke.Health;
                 Name_Player.Text = poke.Name;
                 HPNumber_Player.Text = $"{poke.Health}/{poke.MaxHealth}";
+                Normal_Attack.Text = poke.MoveSet[0];
+                Special_Attack.Text = poke.MoveSet[1];
             }
             else
             {

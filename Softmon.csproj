@@ -157,5 +157,11 @@
   <ItemGroup>
     <None Include="Resources\img\squirtle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img\button_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img\button_back_hover.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

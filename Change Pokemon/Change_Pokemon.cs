@@ -32,6 +32,27 @@ namespace Softmon
             for(var i = 0; i < pokemons.Count; i++)
             {
                 Button b = this.Controls.Find($"Pokemon{i + 1}", false)[0] as Button;
+                switch (pokemons[i].Name.ToLower())
+                {
+                    case "bulbasaur":
+                        b.BackgroundImage = Properties.Resources.bulbasaur;
+                        break;
+                    case "squirtle":
+                        b.BackgroundImage = Properties.Resources.squirtle;
+                        break;
+                    case "charmander":
+                        b.BackgroundImage = Properties.Resources.charmander;
+                        break;
+                    case "pidgey":
+                        b.BackgroundImage = Properties.Resources.pidgey;
+                        break;
+                    case "spearow":
+                        b.BackgroundImage = Properties.Resources.spearow;
+                        break;
+                    case "rattata":
+                        b.BackgroundImage = Properties.Resources.rattata;
+                        break;
+                }
                 b.Text = pokemons[i].Name;
                 b.Enabled = (pokemons[i].Health > 0 ? true : false);
                 b.Tag = i;

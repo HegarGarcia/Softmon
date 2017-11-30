@@ -13,8 +13,8 @@ namespace Softmon
             this.Type = "fire";
             this.Level = 1;
             this.MaxHealth = this.Health;
-            this.MoveSet[0] = "tackle";
-            this.MoveSet[1] = "flamethrower";
+            this.MoveSet[0] = "Tackle";
+            this.MoveSet[1] = "Flamethrower";
         }
 
         public void Attacking(Pokemon defender)

@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.savingTimer = new System.Windows.Forms.Timer(this.components);
-            this.Normal_Attack = new System.Windows.Forms.Button();
-            this.Special_Attack = new System.Windows.Forms.Button();
             this.Change_Pokemon = new System.Windows.Forms.Button();
             this.Name_PC = new System.Windows.Forms.Label();
             this.Name_Player = new System.Windows.Forms.Label();
@@ -41,15 +39,19 @@
             this.HPNumber_PC = new System.Windows.Forms.Label();
             this.HPNumber_Player = new System.Windows.Forms.Label();
             this.PlayerHPBack = new System.Windows.Forms.PictureBox();
+            this.Normal_Attack = new System.Windows.Forms.Button();
             this.pcPokemon = new System.Windows.Forms.PictureBox();
             this.playerPokemon = new System.Windows.Forms.PictureBox();
             this.PCHPBack = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Special_Attack = new System.Windows.Forms.Button();
+            this.button_BG = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerHPBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcPokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCHPBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.button_BG)).BeginInit();
             this.SuspendLayout();
             // 
             // savingTimer
@@ -57,35 +59,12 @@
             this.savingTimer.Interval = 10000;
             this.savingTimer.Tick += new System.EventHandler(this.savingTimer_Tick);
             // 
-            // Normal_Attack
-            // 
-            this.Normal_Attack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Normal_Attack.Location = new System.Drawing.Point(0, 280);
-            this.Normal_Attack.Name = "Normal_Attack";
-            this.Normal_Attack.Size = new System.Drawing.Size(256, 160);
-            this.Normal_Attack.TabIndex = 0;
-            this.Normal_Attack.Text = "Normal Attack";
-            this.Normal_Attack.UseVisualStyleBackColor = true;
-            this.Normal_Attack.Click += new System.EventHandler(this.Normal_Attack_Click);
-            // 
-            // Special_Attack
-            // 
-            this.Special_Attack.Location = new System.Drawing.Point(256, 280);
-            this.Special_Attack.Name = "Special_Attack";
-            this.Special_Attack.Size = new System.Drawing.Size(256, 160);
-            this.Special_Attack.TabIndex = 1;
-            this.Special_Attack.Text = "Special Attack";
-            this.Special_Attack.UseVisualStyleBackColor = true;
-            this.Special_Attack.Click += new System.EventHandler(this.Special_Attack_Click);
-            // 
             // Change_Pokemon
             // 
             this.Change_Pokemon.Location = new System.Drawing.Point(512, 280);
             this.Change_Pokemon.Name = "Change_Pokemon";
             this.Change_Pokemon.Size = new System.Drawing.Size(110, 160);
-            this.Change_Pokemon.TabIndex = 2;
+            this.Change_Pokemon.TabIndex = 1;
             this.Change_Pokemon.Text = "Change Pokemon";
             this.Change_Pokemon.UseVisualStyleBackColor = true;
             this.Change_Pokemon.Click += new System.EventHandler(this.Change_Pokemon_Click);
@@ -157,6 +136,24 @@
             this.PlayerHPBack.TabIndex = 8;
             this.PlayerHPBack.TabStop = false;
             // 
+            // Normal_Attack
+            // 
+            this.Normal_Attack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Normal_Attack.BackColor = System.Drawing.Color.Transparent;
+            this.Normal_Attack.BackgroundImage = global::Softmon.Properties.Resources.button_back;
+            this.Normal_Attack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Normal_Attack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Normal_Attack.Location = new System.Drawing.Point(0, 280);
+            this.Normal_Attack.Margin = new System.Windows.Forms.Padding(0);
+            this.Normal_Attack.Name = "Normal_Attack";
+            this.Normal_Attack.Size = new System.Drawing.Size(256, 160);
+            this.Normal_Attack.TabIndex = 3;
+            this.Normal_Attack.Text = "Normal Attack";
+            this.Normal_Attack.UseVisualStyleBackColor = false;
+            this.Normal_Attack.Click += new System.EventHandler(this.Normal_Attack_Click);
+            // 
             // pcPokemon
             // 
             this.pcPokemon.BackColor = System.Drawing.Color.Transparent;
@@ -200,17 +197,41 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // Special_Attack
+            // 
+            this.Special_Attack.BackgroundImage = global::Softmon.Properties.Resources.button_back;
+            this.Special_Attack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Special_Attack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Special_Attack.Location = new System.Drawing.Point(256, 280);
+            this.Special_Attack.Name = "Special_Attack";
+            this.Special_Attack.Size = new System.Drawing.Size(256, 160);
+            this.Special_Attack.TabIndex = 2;
+            this.Special_Attack.Text = "Special Attack";
+            this.Special_Attack.UseVisualStyleBackColor = true;
+            this.Special_Attack.Click += new System.EventHandler(this.Special_Attack_Click);
+            // 
+            // button_BG
+            // 
+            this.button_BG.BackColor = System.Drawing.Color.Transparent;
+            this.button_BG.Location = new System.Drawing.Point(0, 280);
+            this.button_BG.Name = "button_BG";
+            this.button_BG.Size = new System.Drawing.Size(512, 160);
+            this.button_BG.TabIndex = 15;
+            this.button_BG.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.Normal_Attack);
+            this.Controls.Add(this.Special_Attack);
+            this.Controls.Add(this.button_BG);
             this.Controls.Add(this.HPNumber_Player);
             this.Controls.Add(this.HP_Player);
             this.Controls.Add(this.Name_Player);
             this.Controls.Add(this.PlayerHPBack);
-            this.Controls.Add(this.Normal_Attack);
             this.Controls.Add(this.pcPokemon);
             this.Controls.Add(this.playerPokemon);
             this.Controls.Add(this.HPNumber_PC);
@@ -219,7 +240,6 @@
             this.Controls.Add(this.PCHPBack);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Change_Pokemon);
-            this.Controls.Add(this.Special_Attack);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -235,6 +255,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.playerPokemon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCHPBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.button_BG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,6 +278,7 @@
         public System.Windows.Forms.Label HPNumber_Player;
         private System.Windows.Forms.PictureBox playerPokemon;
         private System.Windows.Forms.PictureBox pcPokemon;
+        private System.Windows.Forms.PictureBox button_BG;
     }
 }
 
