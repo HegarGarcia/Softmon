@@ -116,6 +116,8 @@ namespace Softmon
             MessageBox.Show(Player.currentPokemon.Name + " used " + Player.currentPokemon.MoveSet[1] + "!");
             LoadPokemon(PC.currentPokemon, true);
 
+            PcAttacking();
+
             Normal_Attack.Enabled = Special_Attack.Enabled = Change_Pokemon.Enabled = true;
         }
 
@@ -177,7 +179,6 @@ namespace Softmon
         {
             if (!isPc)
             {
-                MessageBox.Show("Player Damage");
                 HP_Player.Maximum = poke.MaxHealth;
                 HP_Player.Minimum = 0;
                 HP_Player.Value = poke.Health;
@@ -354,7 +355,7 @@ namespace Softmon
 
         private void PcAttacking()
         {
-            if(rnd.Next(0,11) < 6)
+            if(rnd.Next(0,11) <= 6)
             {
                 PcNormalAttack();
             }
@@ -370,23 +371,23 @@ namespace Softmon
             {
                 case "fire":
                     PokemonFire fire = PC.currentPokemon as PokemonFire;
-                    fire.Attacking(PC.currentPokemon);
+                    fire.Attacking(Player.currentPokemon);
                     break;
                 case "flying":
                     PokemonFlying fly = PC.currentPokemon as PokemonFlying;
-                    fly.Attacking(PC.currentPokemon);
+                    fly.Attacking(Player.currentPokemon);
                     break;
                 case "grass":
                     PokemonGrass grass = PC.currentPokemon as PokemonGrass;
-                    grass.Attacking(PC.currentPokemon);
+                    grass.Attacking(Player.currentPokemon);
                     break;
                 case "normal":
                     PokemonNormal normal = PC.currentPokemon as PokemonNormal;
-                    normal.Attacking(PC.currentPokemon);
+                    normal.Attacking(Player.currentPokemon);
                     break;
                 case "water":
                     PokemonWater water = PC.currentPokemon as PokemonWater;
-                    water.Attacking(PC.currentPokemon);
+                    water.Attacking(Player.currentPokemon);
                     break;
                 default:
                     break;
@@ -401,23 +402,23 @@ namespace Softmon
             {
                 case "fire":
                     PokemonFire fire = PC.currentPokemon as PokemonFire;
-                    fire.SpAttacking(PC.currentPokemon);
+                    fire.SpAttacking(Player.currentPokemon);
                     break;
                 case "flying":
                     PokemonFlying fly = PC.currentPokemon as PokemonFlying;
-                    fly.SpAttacking(PC.currentPokemon);
+                    fly.SpAttacking(Player.currentPokemon);
                     break;
                 case "grass":
                     PokemonGrass grass = PC.currentPokemon as PokemonGrass;
-                    grass.SpAttacking(PC.currentPokemon);
+                    grass.SpAttacking(Player.currentPokemon);
                     break;
                 case "normal":
                     PokemonNormal normal = PC.currentPokemon as PokemonNormal;
-                    normal.SpAttacking(PC.currentPokemon);
+                    normal.SpAttacking(Player.currentPokemon);
                     break;
                 case "water":
                     PokemonWater water = PC.currentPokemon as PokemonWater;
-                    water.SpAttacking(PC.currentPokemon);
+                    water.SpAttacking(Player.currentPokemon);
                     break;
                 default:
                     break;
