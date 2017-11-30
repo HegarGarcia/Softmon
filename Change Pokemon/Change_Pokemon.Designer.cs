@@ -36,6 +36,7 @@
             // 
             // Pokemon1
             // 
+            this.Pokemon1.Font = new System.Drawing.Font("Pokemon Pixel Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pokemon1.Location = new System.Drawing.Point(13, 18);
             this.Pokemon1.Name = "Pokemon1";
             this.Pokemon1.Size = new System.Drawing.Size(75, 75);
@@ -47,6 +48,7 @@
             // 
             // Pokemon2
             // 
+            this.Pokemon2.Font = new System.Drawing.Font("Pokemon Pixel Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pokemon2.Location = new System.Drawing.Point(105, 18);
             this.Pokemon2.Name = "Pokemon2";
             this.Pokemon2.Size = new System.Drawing.Size(75, 75);
@@ -58,6 +60,7 @@
             // 
             // Pokemon3
             // 
+            this.Pokemon3.Font = new System.Drawing.Font("Pokemon Pixel Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pokemon3.Location = new System.Drawing.Point(197, 18);
             this.Pokemon3.Name = "Pokemon3";
             this.Pokemon3.Size = new System.Drawing.Size(75, 75);
@@ -71,15 +74,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Softmon.Properties.Resources.bg1;
             this.ClientSize = new System.Drawing.Size(284, 111);
             this.Controls.Add(this.Pokemon3);
             this.Controls.Add(this.Pokemon2);
             this.Controls.Add(this.Pokemon1);
-
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Change_Pokemon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambia de Pokemon";

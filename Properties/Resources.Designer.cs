@@ -63,6 +63,16 @@ namespace Softmon.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg1 {
+            get {
+                object obj = ResourceManager.GetObject("bg1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bulbasaur {
             get {
                 object obj = ResourceManager.GetObject("bulbasaur", resourceCulture);
@@ -136,6 +146,16 @@ namespace Softmon.Properties {
         internal static System.Drawing.Bitmap charmander_back {
             get {
                 object obj = ResourceManager.GetObject("charmander_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chooseBG {
+            get {
+                object obj = ResourceManager.GetObject("chooseBG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

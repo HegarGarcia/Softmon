@@ -49,12 +49,10 @@ namespace Softmon
         {
             Change_Pokemon.BackgroundImage = Properties.Resources.change_hover;
         }
-
         private void OnMouseLeaveChangeP(object sender, EventArgs e)
         {
             Change_Pokemon.BackgroundImage = Properties.Resources.change;
         }
-
         private void OnMouseEnterButton1(object sender, EventArgs e)
         {
             Normal_Attack.BackgroundImage = Properties.Resources.button_back_hover;

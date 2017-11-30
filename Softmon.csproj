@@ -174,5 +174,11 @@
   <ItemGroup>
     <None Include="Resources\img\change_hover.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img\chooseBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img\bg1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
