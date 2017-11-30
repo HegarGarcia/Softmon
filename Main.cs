@@ -36,7 +36,6 @@ namespace Softmon
         {
             Initialize(); //Carga Trainer y Pokedex a Memoria
 
-            //Hack culero para hacer la madre esa transparente
             playerPokemon.Parent = pictureBox1;
             pcPokemon.Parent = pictureBox1;
             pictureBox1.BackColor = Color.Transparent;
@@ -232,8 +231,6 @@ namespace Softmon
 
         private void LoadPokemon(Pokemon poke, bool isPc)
         {
-            playerPokemon.BackColor = TransparencyKey;
-            pcPokemon.BackColor = TransparencyKey;
             if (!isPc)
             {
                 HP_Player.Maximum = poke.MaxHealth;
@@ -241,7 +238,7 @@ namespace Softmon
                 HP_Player.Value = poke.Health;
                 Name_Player.Text = poke.Name;
                 HPNumber_Player.Text = $"{poke.Health}/{poke.MaxHealth}";
-                switch(poke.Name)
+                switch (poke.Name)
                 {
                     case "Bulbasaur":
                         playerPokemon.BackgroundImage = Properties.Resources.bulbasaur_back;
@@ -265,10 +262,6 @@ namespace Softmon
             }
             else
             {
-                if(poke.Health <= 0)
-                {
-
-                }
                 HP_PC.Maximum = poke.MaxHealth;
                 HP_PC.Minimum = 0;
                 HP_PC.Value = poke.Health;
