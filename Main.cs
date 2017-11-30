@@ -237,11 +237,58 @@ namespace Softmon
             }
             else
             {
+                if(poke.Health <= 0)
+                {
+
+                }
                 HP_PC.Maximum = poke.MaxHealth;
                 HP_PC.Minimum = 0;
                 HP_PC.Value = poke.Health;
                 Name_PC.Text = poke.Name;
                 HPNumber_PC.Text = $"{poke.Health}/{poke.MaxHealth}";
+            }
+        }
+
+        private void Normal_Attack_Click(object sender, EventArgs e)
+        {
+            switch (Player.currentPokemon.Type)
+            {
+                case "fire":
+                    PokemonFire fire = Player.currentPokemon as PokemonFire;
+                    fire.Attacking(PC.currentPokemon);
+                    break;
+                case "flying":
+                    PokemonFlying fly = Player.currentPokemon as PokemonFlying;
+                    fly.Attacking(PC.currentPokemon);
+                    break;
+                case "grass":
+                    PokemonGrass grass = Player.currentPokemon as PokemonGrass;
+                    grass.Attacking(PC.currentPokemon);
+                    break;
+                case "normal":
+                    PokemonNormal normal = Player.currentPokemon as PokemonNormal;
+                    normal.Attacking(PC.currentPokemon);
+                    break;
+                case "water":
+                    PokemonWater water = Player.currentPokemon as PokemonWater;
+                    water.Attacking(PC.currentPokemon);
+                    break;
+                default:
+                    break;
+            }
+
+            LoadPokemon(PC.currentPokemon, true);
+        }
+
+        private void ChangePokemon(bool isPc)
+        {
+            if (!isPc)
+            {
+
+            }
+            else
+            {
+
             }
         }
     }

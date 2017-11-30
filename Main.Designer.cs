@@ -64,6 +64,7 @@
             this.Normal_Attack.TabIndex = 0;
             this.Normal_Attack.Text = "Normal Attack";
             this.Normal_Attack.UseVisualStyleBackColor = true;
+            this.Normal_Attack.Click += new System.EventHandler(this.Normal_Attack_Click);
             // 
             // Special_Attack
             // 

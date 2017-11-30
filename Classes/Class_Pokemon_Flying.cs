@@ -17,20 +17,22 @@ namespace Softmon
             this.MoveSet[1] = "Aereal Ace";
         }
 
-        public float Attacking(Pokemon defender)
+        public void Attacking(Pokemon defender)
         {
             float levelDamage = ((2 * this.Level) / 5) + 2;
             float modifier = Effectiveness(defender.Type);
             float attackVsDefence = this.Attack / defender.Defense;
-            return ((levelDamage * attackVsDefence) / 50 + 2) * modifier;
+            int damage = (int)(((levelDamage * attackVsDefence) / 50 + 2 + rnd.Next(0, 6)) * modifier);
+            defender.Health = (defender.Health - damage <= 0 ? 0 : defender.Health - damage);
         }
 
-        public float SpAttacking(Pokemon defender)
+        public void SpAttacking(Pokemon defender)
         {
             float levelDamage = ((2 * this.Level) / 5) + 2;
             float modifier = Effectiveness(defender.Type);
             float attackVsDefence = this.Attack / defender.Defense;
-            return ((levelDamage * attackVsDefence * this.SpAttack) / 50 + 2) * modifier;
+            int damage = (int)(((levelDamage * attackVsDefence * this.SpAttack) / 50 + 2 + rnd.Next(0, 6)) * modifier);
+            defender.Health = (defender.Health - damage <= 0 ? 0 : defender.Health - damage);
         }
 
         private float Effectiveness(string dType) => 1f;

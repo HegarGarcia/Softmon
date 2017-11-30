@@ -16,6 +16,8 @@ namespace Softmon
     [KnownType(typeof(PokemonWater))]
     public class Pokemon
     {
+        protected static Random rnd = new Random();
+
         [DataMember]
         public string[] MoveSet = new string[2];
 
