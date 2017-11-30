@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.savingTimer = new System.Windows.Forms.Timer(this.components);
+
             this.Change_Pokemon = new System.Windows.Forms.Button();
             this.Name_PC = new System.Windows.Forms.Label();
             this.Name_Player = new System.Windows.Forms.Label();
@@ -53,11 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PCHPBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // savingTimer
-            // 
-            this.savingTimer.Interval = 10000;
-            this.savingTimer.Tick += new System.EventHandler(this.savingTimer_Tick);
             // 
             // Change_Pokemon
             // 
@@ -265,8 +259,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Timer savingTimer;
         private System.Windows.Forms.Button Normal_Attack;
         private System.Windows.Forms.Button Special_Attack;
         private System.Windows.Forms.Button Change_Pokemon;

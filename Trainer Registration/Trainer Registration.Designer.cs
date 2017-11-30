@@ -94,7 +94,6 @@
             this.Name = "Trainer_Registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trainer Resgistrator";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Trainer_Registration_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

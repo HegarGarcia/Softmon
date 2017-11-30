@@ -64,6 +64,7 @@
     <Compile Include="Classes\Class_Pokemon_Grass.cs" />
     <Compile Include="Classes\Class_Pokemon_Normal.cs" />
     <Compile Include="Classes\Class_Pokemon_Water.cs" />
+    <Compile Include="Class_BattleField.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

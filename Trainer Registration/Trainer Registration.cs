@@ -43,17 +43,5 @@ namespace Softmon
             createTrainerButton.Enabled = !string.IsNullOrWhiteSpace(this.nameTextBox.Text) &&
                 !string.IsNullOrWhiteSpace(this.cityTextBox.Text);
         }
-
-        private void Trainer_Registration_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if(createTrainerButton.Enabled == true)
-            {
-                string name = nameTextBox.Text;
-                string city = cityTextBox.Text;
-
-                player = new Trainer(name, city);
-                this.Close();
-            }
-        }
     }
 }
