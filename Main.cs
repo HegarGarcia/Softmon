@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using System.Runtime.Serialization;
@@ -438,7 +437,10 @@ namespace Softmon
         {
             if(Player.currentPokemon.Health == 0)
             {
-
+                var form = new Change_Pokemon(Player);
+                form.ShowDialog();
+                Player.currentPokemon = form.current;
+                LoadPokemon(Player.currentPokemon, false);
             }
 
             if(PC.currentPokemon.Health == 0)
@@ -446,6 +448,17 @@ namespace Softmon
                 PC.Pokemons.Remove(PC.currentPokemon);
                 PC.currentPokemon = PC.Pokemons[rnd.Next(0, PC.Pokemons.Count)];
                 LoadPokemon(PC.currentPokemon, true);
+            }
+        }
+
+        private void Change_Pokemon_Click(object sender, EventArgs e)
+        {
+            var form = new Change_Pokemon(Player);
+            form.ShowDialog();
+            if (form.current != null)
+            {
+                Player.currentPokemon = form.current;
+                LoadPokemon(Player.currentPokemon, false);
             }
         }
     }

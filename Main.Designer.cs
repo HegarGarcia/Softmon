@@ -88,6 +88,7 @@
             this.Change_Pokemon.TabIndex = 2;
             this.Change_Pokemon.Text = "Change Pokemon";
             this.Change_Pokemon.UseVisualStyleBackColor = true;
+            this.Change_Pokemon.Click += new System.EventHandler(this.Change_Pokemon_Click);
             // 
             // Name_PC
             // 
