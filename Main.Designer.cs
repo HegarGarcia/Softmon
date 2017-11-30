@@ -35,12 +35,12 @@
             this.Special_Attack = new System.Windows.Forms.Button();
             this.Change_Pokemon = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.name1 = new System.Windows.Forms.Label();
+            this.Name_PC = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.name2 = new System.Windows.Forms.Label();
+            this.Name_Player = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.hp1 = new System.Windows.Forms.ProgressBar();
-            this.hp2 = new System.Windows.Forms.ProgressBar();
+            this.HP_PC = new System.Windows.Forms.ProgressBar();
+            this.HP_Player = new System.Windows.Forms.ProgressBar();
             this.hpNum1 = new System.Windows.Forms.Label();
             this.hpNum2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,15 +93,16 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // name1
+            // Name_PC
             // 
-            this.name1.AutoSize = true;
-            this.name1.BackColor = System.Drawing.Color.White;
-            this.name1.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name1.Location = new System.Drawing.Point(17, 14);
-            this.name1.Name = "name1";
-            this.name1.Size = new System.Drawing.Size(0, 28);
-            this.name1.TabIndex = 4;
+            this.Name_PC.AutoSize = true;
+            this.Name_PC.BackColor = System.Drawing.Color.White;
+            this.Name_PC.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_PC.Location = new System.Drawing.Point(17, 14);
+            this.Name_PC.Name = "Name_PC";
+            this.Name_PC.Size = new System.Drawing.Size(64, 28);
+            this.Name_PC.TabIndex = 4;
+            this.Name_PC.Text = "Name";
             // 
             // pictureBox2
             // 
@@ -113,16 +114,16 @@
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
-            // name2
+            // Name_Player
             // 
-            this.name2.AutoSize = true;
-            this.name2.BackColor = System.Drawing.Color.White;
-            this.name2.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name2.Location = new System.Drawing.Point(324, 191);
-            this.name2.Name = "name2";
-            this.name2.Size = new System.Drawing.Size(77, 28);
-            this.name2.TabIndex = 7;
-            this.name2.Text = "name2";
+            this.Name_Player.AutoSize = true;
+            this.Name_Player.BackColor = System.Drawing.Color.White;
+            this.Name_Player.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_Player.Location = new System.Drawing.Point(324, 191);
+            this.Name_Player.Name = "Name_Player";
+            this.Name_Player.Size = new System.Drawing.Size(64, 28);
+            this.Name_Player.TabIndex = 7;
+            this.Name_Player.Text = "Name";
             // 
             // pictureBox3
             // 
@@ -134,19 +135,19 @@
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
-            // hp1
+            // HP_PC
             // 
-            this.hp1.Location = new System.Drawing.Point(12, 46);
-            this.hp1.Name = "hp1";
-            this.hp1.Size = new System.Drawing.Size(290, 15);
-            this.hp1.TabIndex = 9;
+            this.HP_PC.Location = new System.Drawing.Point(12, 46);
+            this.HP_PC.Name = "HP_PC";
+            this.HP_PC.Size = new System.Drawing.Size(290, 15);
+            this.HP_PC.TabIndex = 9;
             // 
-            // hp2
+            // HP_Player
             // 
-            this.hp2.Location = new System.Drawing.Point(320, 223);
-            this.hp2.Name = "hp2";
-            this.hp2.Size = new System.Drawing.Size(290, 15);
-            this.hp2.TabIndex = 10;
+            this.HP_Player.Location = new System.Drawing.Point(320, 223);
+            this.HP_Player.Name = "HP_Player";
+            this.HP_Player.Size = new System.Drawing.Size(290, 15);
+            this.HP_Player.TabIndex = 10;
             // 
             // hpNum1
             // 
@@ -176,11 +177,11 @@
             this.ClientSize = new System.Drawing.Size(624, 441);
             this.Controls.Add(this.hpNum2);
             this.Controls.Add(this.hpNum1);
-            this.Controls.Add(this.hp2);
-            this.Controls.Add(this.hp1);
-            this.Controls.Add(this.name2);
+            this.Controls.Add(this.HP_Player);
+            this.Controls.Add(this.HP_PC);
+            this.Controls.Add(this.Name_Player);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.name1);
+            this.Controls.Add(this.Name_PC);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Change_Pokemon);
@@ -210,12 +211,12 @@
         private System.Windows.Forms.Button Special_Attack;
         private System.Windows.Forms.Button Change_Pokemon;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label name1;
+        private System.Windows.Forms.Label Name_PC;
         private System.Windows.Forms.PictureBox pictureBox2;
-        public System.Windows.Forms.Label name2;
+        public System.Windows.Forms.Label Name_Player;
         private System.Windows.Forms.PictureBox pictureBox3;
-        public System.Windows.Forms.ProgressBar hp1;
-        public System.Windows.Forms.ProgressBar hp2;
+        public System.Windows.Forms.ProgressBar HP_PC;
+        public System.Windows.Forms.ProgressBar HP_Player;
         public System.Windows.Forms.Label hpNum1;
         public System.Windows.Forms.Label hpNum2;
     }

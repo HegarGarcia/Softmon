@@ -117,7 +117,6 @@ namespace Softmon
             Pokedex.Add(rattata);
             Pokedex.Add(spearow);
 
-
             XmlWriter pokedexFile = XmlWriter.Create(pokedexFilePath, settings);
             pokedexSerializer.WriteObject(pokedexFile, Pokedex);
             pokedexFile.Close();

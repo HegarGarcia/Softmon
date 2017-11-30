@@ -11,22 +11,28 @@ namespace Softmon
         public PokemonNormal() 
         {
             this.Type = "normal";
-            MoveSet[0] = "tacle";
-            MoveSet[1] = "scratch";
+            this.Level = 1;
+            this.MoveSet[0] = "tacle";
+            this.MoveSet[1] = "scratch";
         }
 
-        public int Attacking(Pokemon defender) //Returns damage dealt to the opponent
+        public int Attacking(Pokemon defender)
         {
-            //Damage Equation
             float levelDamage = ((2 * this.Level) / 5) + 2;
             float modifier = Effectiveness(defender.Type);
             float attackVsDefence = this.Attack / defender.Defense;
             return (int) (((levelDamage * attackVsDefence) / 50 + 2) * modifier);
         }
 
+        public float SpAttacking(Pokemon defender)
+        {
+            float levelDamage = ((2 * this.Level) / 5) + 2;
+            float modifier = Effectiveness(defender.Type);
+            float attackVsDefence = this.Attack / defender.Defense;
+            return ((levelDamage * attackVsDefence * this.SpAttack) / 50 + 2) * modifier;
+        }
 
-
-        private float Effectiveness(string dType) => 1f; //Returns Damage modifier based in Pokemon Type
+        private float Effectiveness(string dType) => 1f;
 
         
     }

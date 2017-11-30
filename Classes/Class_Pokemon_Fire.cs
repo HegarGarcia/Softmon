@@ -11,8 +11,9 @@ namespace Softmon
         public PokemonFire()
         {
             this.Type = "fire";
-            MoveSet[0] = "tackle";
-            MoveSet[1] = "flamethrower";
+            this.Level = 1;
+            this.MoveSet[0] = "tackle";
+            this.MoveSet[1] = "flamethrower";
         }
 
         public float Attacking(Pokemon defender)
@@ -21,6 +22,14 @@ namespace Softmon
             float modifier = Effectiveness(defender.Type);
             float attackVsDefence = this.Attack / defender.Defense;
             return ((levelDamage * attackVsDefence) / 50 + 2) * modifier;
+        }
+
+        public float SpAttacking(Pokemon defender)
+        {
+            float levelDamage = ((2 * this.Level) / 5) + 2;
+            float modifier = Effectiveness(defender.Type);
+            float attackVsDefence = this.Attack / defender.Defense;
+            return ((levelDamage * attackVsDefence * this.SpAttack) / 50 + 2) * modifier;
         }
 
         private float Effectiveness(string dType)

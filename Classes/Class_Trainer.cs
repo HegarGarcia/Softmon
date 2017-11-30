@@ -31,6 +31,9 @@ namespace Softmon
             private set;
         } = new List<Pokemon>();
 
+        [DataMember]
+        public List<string> BattleRecords = new List<string>();
+
         public Trainer(string nombre, string ciudad)
         {
             this.Name = nombre;
