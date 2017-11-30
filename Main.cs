@@ -291,6 +291,18 @@ namespace Softmon
             }
         }
 
+        private void ChangePokemon(bool isPc)
+        {
+            if (!isPc)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
         private void Normal_Attack_Click(object sender, EventArgs e)
         {
             switch (Player.currentPokemon.Type)
@@ -322,16 +334,35 @@ namespace Softmon
             LoadPokemon(PC.currentPokemon, true);
         }
 
-        private void ChangePokemon(bool isPc)
+        private void Special_Attack_Click(object sender, EventArgs e)
         {
-            if (!isPc)
+            switch (Player.currentPokemon.Type)
             {
-
+                case "fire":
+                    PokemonFire fire = Player.currentPokemon as PokemonFire;
+                    fire.SpAttacking(PC.currentPokemon);
+                    break;
+                case "flying":
+                    PokemonFlying fly = Player.currentPokemon as PokemonFlying;
+                    fly.SpAttacking(PC.currentPokemon);
+                    break;
+                case "grass":
+                    PokemonGrass grass = Player.currentPokemon as PokemonGrass;
+                    grass.SpAttacking(PC.currentPokemon);
+                    break;
+                case "normal":
+                    PokemonNormal normal = Player.currentPokemon as PokemonNormal;
+                    normal.SpAttacking(PC.currentPokemon);
+                    break;
+                case "water":
+                    PokemonWater water = Player.currentPokemon as PokemonWater;
+                    water.SpAttacking(PC.currentPokemon);
+                    break;
+                default:
+                    break;
             }
-            else
-            {
 
-            }
+            LoadPokemon(PC.currentPokemon, true);
         }
     }
 }
