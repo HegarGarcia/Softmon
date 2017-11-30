@@ -318,7 +318,7 @@ namespace Softmon
                 default:
                     break;
             }
-
+            MessageBox.Show(Player.currentPokemon.Name + " used " + Player.currentPokemon.MoveSet[0] + "!");
             LoadPokemon(PC.currentPokemon, true);
         }
 
