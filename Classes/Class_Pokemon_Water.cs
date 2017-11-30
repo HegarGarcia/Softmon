@@ -13,6 +13,7 @@ namespace Softmon
         {
             this.Type = "water";
             this.Level = 1;
+            this.MaxHealth = this.Health;
             this.MoveSet[0] = "tackle";
             this.MoveSet[1] = "Water Gun";
         }

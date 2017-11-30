@@ -74,5 +74,19 @@ namespace Softmon
             get;
             set;
         }
+
+        [DataMember]
+        public int MaxHealth
+        {
+            get;
+            set;
+        }
+
+        [DataMember]
+        public string SpritePath
+        {
+            get;
+            set;
+        }
     }
 }

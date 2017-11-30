@@ -24,6 +24,8 @@ namespace Softmon
         private DataContractSerializer pokedexSerializer = new DataContractSerializer(typeof(List<Pokemon>));
         private DataContractSerializer trainerSerializer = new DataContractSerializer(typeof(Trainer));
 
+        static Random rnd = new Random();
+
         public Main()
         {
             InitializeComponent();
@@ -31,9 +33,11 @@ namespace Softmon
 
         private void Main_Load(object sender, EventArgs e)
         {
-            Initialize();
+            Initialize(); //Carga Trainer y Pokedex a Memoria
+
+
+
             savingTimer.Enabled = true;
-            
         }
         
         private void savingTimer_Tick(object sender, EventArgs e)
@@ -92,23 +96,65 @@ namespace Softmon
         private void CreatePokedex(XmlWriterSettings settings)
         {
             //Adding starting pokemons...
-            Pokemon bulbasaur = new PokemonGrass() { Name = "Bulbasaur", Health = 45,
-                Attack = 49, Defense = 49, SpAttack = 65, Id = 1, };
+            Pokemon bulbasaur = new PokemonGrass()
+            {
+                Name = "Bulbasaur",
+                Health = 45,
+                Attack = 49,
+                Defense = 49,
+                SpAttack = 65,
+                Id = 1
+            };
 
-            Pokemon charmander = new PokemonFire() { Name = "Charmander", Health = 39,
-                Attack = 52, Defense = 43, SpAttack = 60, Id = 2 };
+            Pokemon charmander = new PokemonFire()
+            {
+                Name = "Charmander",
+                Health = 39,
+                Attack = 52,
+                Defense = 43,
+                SpAttack = 60,
+                Id = 2
+            };
 
-            Pokemon squirtle = new PokemonWater() { Name = "Squirtle", Health = 44,
-                Attack = 48, Defense = 65, SpAttack = 50, Id = 3 };
+            Pokemon squirtle = new PokemonWater()
+            {
+                Name = "Squirtle",
+                Health = 44,
+                Attack = 48,
+                Defense = 65,
+                SpAttack = 50,
+                Id = 3
+            };
 
-            Pokemon pidgey = new PokemonFlying() { Name = "Pidgey", Health = 40,
-                Attack = 45, Defense = 40, SpAttack = 35, Id = 4 };
+            Pokemon pidgey = new PokemonFlying()
+            {
+                Name = "Pidgey",
+                Health = 40,
+                Attack = 45,
+                Defense = 40,
+                SpAttack = 35,
+                Id = 4
+            };
 
-            Pokemon rattata = new PokemonNormal() { Name = "Rattata", Health = 30,
-                Attack = 56, Defense = 35, SpAttack = 25, Id = 5 };
+            Pokemon rattata = new PokemonNormal()
+            {
+                Name = "Rattata",
+                Health = 30,
+                Attack = 56,
+                Defense = 35,
+                SpAttack = 25,
+                Id = 5
+            };
 
-            Pokemon spearow = new PokemonFlying() { Name = "Spearow", Health = 40,
-                Attack = 60, Defense = 30, SpAttack = 31, Id = 6 };
+            Pokemon spearow = new PokemonFlying()
+            {
+                Name = "Spearow",
+                Health = 40,
+                Attack = 60,
+                Defense = 30,
+                SpAttack = 31,
+                Id = 6
+            };
 
             Pokedex.Add(bulbasaur);
             Pokedex.Add(charmander);

@@ -12,6 +12,7 @@ namespace Softmon
         {
             this.Type = "flying";
             this.Level = 1;
+            this.MaxHealth = this.Health;
             this.MoveSet[0] = "Peck";
             this.MoveSet[1] = "Aereal Ace";
         }
