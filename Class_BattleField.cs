@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Softmon
 {
-    class BattleField
+    public class BattleField
     {
         private string pokedexFilePath = $@"{Environment.CurrentDirectory}\\Pokedex.xml";
         private string trainerFilePath = $@"{Environment.CurrentDirectory}\\Trainer.xml";
