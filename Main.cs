@@ -36,6 +36,11 @@ namespace Softmon
         {
             Initialize(); //Carga Trainer y Pokedex a Memoria
 
+            //Hack culero para hacer la madre esa transparente
+            playerPokemon.Parent = pictureBox1;
+            pcPokemon.Parent = pictureBox1;
+            pictureBox1.BackColor = Color.Transparent;
+
             savingTimer.Enabled = true;
         }
         
@@ -227,6 +232,8 @@ namespace Softmon
 
         private void LoadPokemon(Pokemon poke, bool isPc)
         {
+            playerPokemon.BackColor = TransparencyKey;
+            pcPokemon.BackColor = TransparencyKey;
             if (!isPc)
             {
                 HP_Player.Maximum = poke.MaxHealth;
@@ -234,6 +241,27 @@ namespace Softmon
                 HP_Player.Value = poke.Health;
                 Name_Player.Text = poke.Name;
                 HPNumber_Player.Text = $"{poke.Health}/{poke.MaxHealth}";
+                switch(poke.Name)
+                {
+                    case "Bulbasaur":
+                        playerPokemon.BackgroundImage = Properties.Resources.bulbasaur_back;
+                        break;
+                    case "Squirtle":
+                        playerPokemon.BackgroundImage = Properties.Resources.squirtle_back;
+                        break;
+                    case "Charmander":
+                        playerPokemon.BackgroundImage = Properties.Resources.charmander_back;
+                        break;
+                    case "Pidgey":
+                        playerPokemon.BackgroundImage = Properties.Resources.pidgey_back;
+                        break;
+                    case "Spearow":
+                        playerPokemon.BackgroundImage = Properties.Resources.spearow_back;
+                        break;
+                    case "Rattata":
+                        playerPokemon.BackgroundImage = Properties.Resources.rattata_back;
+                        break;
+                }
             }
             else
             {
@@ -246,6 +274,27 @@ namespace Softmon
                 HP_PC.Value = poke.Health;
                 Name_PC.Text = poke.Name;
                 HPNumber_PC.Text = $"{poke.Health}/{poke.MaxHealth}";
+                switch (poke.Name)
+                {
+                    case "Bulbasaur":
+                        pcPokemon.BackgroundImage = Properties.Resources.bulbasaur;
+                        break;
+                    case "Squirtle":
+                        pcPokemon.BackgroundImage = Properties.Resources.squirtle;
+                        break;
+                    case "Charmander":
+                        pcPokemon.BackgroundImage = Properties.Resources.charmander;
+                        break;
+                    case "Pidgey":
+                        pcPokemon.BackgroundImage = Properties.Resources.pidgey;
+                        break;
+                    case "Spearow":
+                        pcPokemon.BackgroundImage = Properties.Resources.spearow;
+                        break;
+                    case "Rattata":
+                        pcPokemon.BackgroundImage = Properties.Resources.rattata;
+                        break;
+                }
             }
         }
 
