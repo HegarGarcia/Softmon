@@ -38,20 +38,20 @@
             this.HP_Player = new System.Windows.Forms.ProgressBar();
             this.HPNumber_PC = new System.Windows.Forms.Label();
             this.HPNumber_Player = new System.Windows.Forms.Label();
-            this.PlayerHPBack = new System.Windows.Forms.PictureBox();
             this.Normal_Attack = new System.Windows.Forms.Button();
+            this.Special_Attack = new System.Windows.Forms.Button();
+            this.button_BG = new System.Windows.Forms.PictureBox();
+            this.PlayerHPBack = new System.Windows.Forms.PictureBox();
             this.pcPokemon = new System.Windows.Forms.PictureBox();
             this.playerPokemon = new System.Windows.Forms.PictureBox();
             this.PCHPBack = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Special_Attack = new System.Windows.Forms.Button();
-            this.button_BG = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.button_BG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerHPBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcPokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPokemon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCHPBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.button_BG)).BeginInit();
             this.SuspendLayout();
             // 
             // savingTimer
@@ -125,6 +125,48 @@
             this.HPNumber_Player.TabIndex = 12;
             this.HPNumber_Player.Text = "Health";
             // 
+            // Normal_Attack
+            // 
+            this.Normal_Attack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Normal_Attack.BackColor = System.Drawing.Color.Transparent;
+            this.Normal_Attack.BackgroundImage = global::Softmon.Properties.Resources.button_back;
+            this.Normal_Attack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Normal_Attack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Normal_Attack.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Normal_Attack.Location = new System.Drawing.Point(0, 280);
+            this.Normal_Attack.Margin = new System.Windows.Forms.Padding(0);
+            this.Normal_Attack.Name = "Normal_Attack";
+            this.Normal_Attack.Size = new System.Drawing.Size(256, 160);
+            this.Normal_Attack.TabIndex = 3;
+            this.Normal_Attack.Text = "Normal Attack";
+            this.Normal_Attack.UseVisualStyleBackColor = false;
+            this.Normal_Attack.Click += new System.EventHandler(this.Normal_Attack_Click);
+            // 
+            // Special_Attack
+            // 
+            this.Special_Attack.BackgroundImage = global::Softmon.Properties.Resources.button_back;
+            this.Special_Attack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Special_Attack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Special_Attack.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Special_Attack.Location = new System.Drawing.Point(256, 280);
+            this.Special_Attack.Name = "Special_Attack";
+            this.Special_Attack.Size = new System.Drawing.Size(256, 160);
+            this.Special_Attack.TabIndex = 2;
+            this.Special_Attack.Text = "Special Attack";
+            this.Special_Attack.UseVisualStyleBackColor = true;
+            this.Special_Attack.Click += new System.EventHandler(this.Special_Attack_Click);
+            // 
+            // button_BG
+            // 
+            this.button_BG.BackColor = System.Drawing.Color.Transparent;
+            this.button_BG.Location = new System.Drawing.Point(0, 280);
+            this.button_BG.Name = "button_BG";
+            this.button_BG.Size = new System.Drawing.Size(512, 160);
+            this.button_BG.TabIndex = 15;
+            this.button_BG.TabStop = false;
+            // 
             // PlayerHPBack
             // 
             this.PlayerHPBack.BackColor = System.Drawing.Color.Transparent;
@@ -135,24 +177,6 @@
             this.PlayerHPBack.Size = new System.Drawing.Size(300, 90);
             this.PlayerHPBack.TabIndex = 8;
             this.PlayerHPBack.TabStop = false;
-            // 
-            // Normal_Attack
-            // 
-            this.Normal_Attack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Normal_Attack.BackColor = System.Drawing.Color.Transparent;
-            this.Normal_Attack.BackgroundImage = global::Softmon.Properties.Resources.button_back;
-            this.Normal_Attack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Normal_Attack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Normal_Attack.Location = new System.Drawing.Point(0, 280);
-            this.Normal_Attack.Margin = new System.Windows.Forms.Padding(0);
-            this.Normal_Attack.Name = "Normal_Attack";
-            this.Normal_Attack.Size = new System.Drawing.Size(256, 160);
-            this.Normal_Attack.TabIndex = 3;
-            this.Normal_Attack.Text = "Normal Attack";
-            this.Normal_Attack.UseVisualStyleBackColor = false;
-            this.Normal_Attack.Click += new System.EventHandler(this.Normal_Attack_Click);
             // 
             // pcPokemon
             // 
@@ -197,28 +221,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // Special_Attack
-            // 
-            this.Special_Attack.BackgroundImage = global::Softmon.Properties.Resources.button_back;
-            this.Special_Attack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Special_Attack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Special_Attack.Location = new System.Drawing.Point(256, 280);
-            this.Special_Attack.Name = "Special_Attack";
-            this.Special_Attack.Size = new System.Drawing.Size(256, 160);
-            this.Special_Attack.TabIndex = 2;
-            this.Special_Attack.Text = "Special Attack";
-            this.Special_Attack.UseVisualStyleBackColor = true;
-            this.Special_Attack.Click += new System.EventHandler(this.Special_Attack_Click);
-            // 
-            // button_BG
-            // 
-            this.button_BG.BackColor = System.Drawing.Color.Transparent;
-            this.button_BG.Location = new System.Drawing.Point(0, 280);
-            this.button_BG.Name = "button_BG";
-            this.button_BG.Size = new System.Drawing.Size(512, 160);
-            this.button_BG.TabIndex = 15;
-            this.button_BG.TabStop = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +245,7 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Main";
@@ -250,12 +253,12 @@
             this.Text = "SOFTMON";
             this.Load += new System.EventHandler(this.Main_Load);
             this.Shown += new System.EventHandler(this.Main_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.button_BG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerHPBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcPokemon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPokemon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PCHPBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.button_BG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

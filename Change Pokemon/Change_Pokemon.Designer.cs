@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Change_Pokemon));
             this.Pokemon1 = new System.Windows.Forms.Button();
             this.Pokemon2 = new System.Windows.Forms.Button();
             this.Pokemon3 = new System.Windows.Forms.Button();
@@ -75,6 +76,7 @@
             this.Controls.Add(this.Pokemon2);
             this.Controls.Add(this.Pokemon1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Change_Pokemon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambia de Pokemon";

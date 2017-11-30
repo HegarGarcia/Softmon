@@ -131,6 +131,16 @@ namespace Softmon.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
+        internal static System.Drawing.Icon icon {
+            get {
+                object obj = ResourceManager.GetObject("icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap pidgey {
@@ -147,6 +157,16 @@ namespace Softmon.Properties {
             get {
                 object obj = ResourceManager.GetObject("pidgey_back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] pokemon_pixel_font {
+            get {
+                object obj = ResourceManager.GetObject("pokemon_pixel_font", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

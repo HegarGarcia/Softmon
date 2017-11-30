@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Runtime.Serialization;
 using System.IO;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
 
 namespace Softmon
 {
@@ -25,6 +27,7 @@ namespace Softmon
         public Main()
         {
             InitializeComponent();
+            CustomFontInit();
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -214,8 +217,8 @@ namespace Softmon
                 HP_Player.Value = poke.Health;
                 Name_Player.Text = poke.Name;
                 HPNumber_Player.Text = $"{poke.Health}/{poke.MaxHealth}";
-                Normal_Attack.Text = poke.MoveSet[0];
-                Special_Attack.Text = poke.MoveSet[1];
+                Normal_Attack.Text = poke.MoveSet[0].ToUpper();
+                Special_Attack.Text = poke.MoveSet[1].ToUpper();
             }
             else
             {
@@ -486,6 +489,31 @@ namespace Softmon
                 Player.currentPokemon = form.current;
                 LoadPokemon(Player.currentPokemon, false);
             }
+        }
+
+        private void CustomFontInit()
+        {
+            //Create your private font collection object.
+            PrivateFontCollection pfc = new PrivateFontCollection();
+
+            //Select your font from the resources.
+            int fontLength = Properties.Resources.pokemon_pixel_font.Length;
+
+            // create a buffer to read in to
+            byte[] fontdata = Properties.Resources.pokemon_pixel_font;
+
+            // create an unsafe memory block for the font data
+            System.IntPtr data = Marshal.AllocCoTaskMem(fontLength);
+
+            // copy the bytes to the unsafe memory block
+            Marshal.Copy(fontdata, 0, data, fontLength);
+
+            // pass the font to the font collection
+            pfc.AddMemoryFont(data, fontLength);
+
+            Normal_Attack.Font = new Font(pfc.Families[0], Normal_Attack.Font.Size);
+            Special_Attack.Font = new Font(pfc.Families[0], Special_Attack.Font.Size);
+            Change_Pokemon.Font = new Font(pfc.Families[0], Change_Pokemon.Font.Size);
         }
     }
 }
