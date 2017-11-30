@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using System.Runtime.Serialization;
@@ -51,6 +47,8 @@ namespace Softmon
 
         private void Normal_Attack_Click(object sender, EventArgs e)
         {
+            Normal_Attack.Enabled = Special_Attack.Enabled = Change_Pokemon.Enabled = false;
+
             switch (Player.currentPokemon.Type)
             {
                 case "fire":
@@ -78,10 +76,16 @@ namespace Softmon
             }
             MessageBox.Show(Player.currentPokemon.Name + " used " + Player.currentPokemon.MoveSet[0] + "!");
             LoadPokemon(PC.currentPokemon, true);
+
+            PcAttacking();
+
+            Normal_Attack.Enabled = Special_Attack.Enabled = Change_Pokemon.Enabled = true;
         }
 
         private void Special_Attack_Click(object sender, EventArgs e)
         {
+            Normal_Attack.Enabled = Special_Attack.Enabled = Change_Pokemon.Enabled = false;
+
             switch (Player.currentPokemon.Type)
             {
                 case "fire":
@@ -109,6 +113,8 @@ namespace Softmon
             }
             MessageBox.Show(Player.currentPokemon.Name + " used " + Player.currentPokemon.MoveSet[1] + "!");
             LoadPokemon(PC.currentPokemon, true);
+
+            Normal_Attack.Enabled = Special_Attack.Enabled = Change_Pokemon.Enabled = true;
         }
 
         private void savingTimer_Tick(object sender, EventArgs e)
@@ -169,6 +175,7 @@ namespace Softmon
         {
             if (!isPc)
             {
+                MessageBox.Show("Player Damage");
                 HP_Player.Maximum = poke.MaxHealth;
                 HP_Player.Minimum = 0;
                 HP_Player.Value = poke.Health;
@@ -341,6 +348,80 @@ namespace Softmon
             }
 
             PC.AddPokemons(temp);
+        }
+
+        private void PcAttacking()
+        {
+            if(rnd.Next(0,11) < 6)
+            {
+                PcNormalAttack();
+            }
+            else
+            {
+                PcSpecialAttack();
+            }
+        }
+
+        private void PcNormalAttack()
+        {
+            switch (PC.currentPokemon.Type)
+            {
+                case "fire":
+                    PokemonFire fire = PC.currentPokemon as PokemonFire;
+                    fire.Attacking(PC.currentPokemon);
+                    break;
+                case "flying":
+                    PokemonFlying fly = PC.currentPokemon as PokemonFlying;
+                    fly.Attacking(PC.currentPokemon);
+                    break;
+                case "grass":
+                    PokemonGrass grass = PC.currentPokemon as PokemonGrass;
+                    grass.Attacking(PC.currentPokemon);
+                    break;
+                case "normal":
+                    PokemonNormal normal = PC.currentPokemon as PokemonNormal;
+                    normal.Attacking(PC.currentPokemon);
+                    break;
+                case "water":
+                    PokemonWater water = PC.currentPokemon as PokemonWater;
+                    water.Attacking(PC.currentPokemon);
+                    break;
+                default:
+                    break;
+            }
+            MessageBox.Show(PC.currentPokemon.Name + " used " + PC.currentPokemon.MoveSet[0] + "!");
+            LoadPokemon(Player.currentPokemon, false);
+        }
+
+        private void PcSpecialAttack()
+        {
+            switch (PC.currentPokemon.Type)
+            {
+                case "fire":
+                    PokemonFire fire = PC.currentPokemon as PokemonFire;
+                    fire.SpAttacking(PC.currentPokemon);
+                    break;
+                case "flying":
+                    PokemonFlying fly = PC.currentPokemon as PokemonFlying;
+                    fly.SpAttacking(PC.currentPokemon);
+                    break;
+                case "grass":
+                    PokemonGrass grass = PC.currentPokemon as PokemonGrass;
+                    grass.SpAttacking(PC.currentPokemon);
+                    break;
+                case "normal":
+                    PokemonNormal normal = PC.currentPokemon as PokemonNormal;
+                    normal.SpAttacking(PC.currentPokemon);
+                    break;
+                case "water":
+                    PokemonWater water = PC.currentPokemon as PokemonWater;
+                    water.SpAttacking(PC.currentPokemon);
+                    break;
+                default:
+                    break;
+            }
+            MessageBox.Show(PC.currentPokemon.Name + " used " + PC.currentPokemon.MoveSet[0] + "!");
+            LoadPokemon(Player.currentPokemon, false);
         }
 
         private void ChangePokemon(bool isPc)
