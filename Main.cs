@@ -78,10 +78,14 @@ namespace Softmon
             }
             MessageBox.Show(Player.currentPokemon.Name + " used " + Player.currentPokemon.MoveSet[0] + "!");
             LoadPokemon(PC.currentPokemon, true);
-
-            PcAttacking();
+            
+            if(PC.currentPokemon.Health > 0)
+                PcAttacking();
+            else if (PC.currentPokemon.Health == 0 || Player.currentPokemon.Health == 0)
+                ChangePokemon();
 
             Normal_Attack.Enabled = Special_Attack.Enabled = Change_Pokemon.Enabled = true;
+
         }
 
         private void Special_Attack_Click(object sender, EventArgs e)
@@ -116,7 +120,10 @@ namespace Softmon
             MessageBox.Show(Player.currentPokemon.Name + " used " + Player.currentPokemon.MoveSet[1] + "!");
             LoadPokemon(PC.currentPokemon, true);
 
-            PcAttacking();
+            if (PC.currentPokemon.Health > 0)
+                PcAttacking();
+            else if (PC.currentPokemon.Health == 0 || Player.currentPokemon.Health == 0)
+                ChangePokemon();
 
             Normal_Attack.Enabled = Special_Attack.Enabled = Change_Pokemon.Enabled = true;
         }
@@ -427,15 +434,18 @@ namespace Softmon
             LoadPokemon(Player.currentPokemon, false);
         }
 
-        private void ChangePokemon(bool isPc)
+        private void ChangePokemon()
         {
-            if (!isPc)
+            if(Player.currentPokemon.Health == 0)
             {
 
             }
-            else
-            {
 
+            if(PC.currentPokemon.Health == 0)
+            {
+                PC.Pokemons.Remove(PC.currentPokemon);
+                PC.currentPokemon = PC.Pokemons[rnd.Next(0, PC.Pokemons.Count)];
+                LoadPokemon(PC.currentPokemon, true);
             }
         }
     }

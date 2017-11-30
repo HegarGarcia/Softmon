@@ -38,7 +38,7 @@ namespace Softmon
         public Pokemon currentPokemon
         {
             get;
-            private set;
+            set;
         }
 
         public Trainer(string nombre, string ciudad)
