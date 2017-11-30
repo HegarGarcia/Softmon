@@ -114,9 +114,9 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox2.Location = new System.Drawing.Point(7, 7);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(290, 88);
+            this.pictureBox2.Size = new System.Drawing.Size(300, 90);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             // 
@@ -135,9 +135,9 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Location = new System.Drawing.Point(320, 186);
+            this.pictureBox3.Location = new System.Drawing.Point(315, 186);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(290, 88);
+            this.pictureBox3.Size = new System.Drawing.Size(300, 90);
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
             // 
