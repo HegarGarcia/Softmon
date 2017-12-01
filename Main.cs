@@ -27,16 +27,18 @@ namespace Softmon
             CustomFontInit();
         }
 
-        private void Main_Load(object sender, EventArgs e)
+        private void Main_Load(object sender, EventArgs e) //Inicia formatos y tracking de Mouse
         {
             Initialize(); //Carga Trainer y Pokedex a Memoria
 
+            //Generar Transparencias
             playerPokemon.Parent = pictureBox1;
             pcPokemon.Parent = pictureBox1;
             PCHPBack.Parent = pictureBox1;
             PlayerHPBack.Parent = pictureBox1;
             pictureBox1.BackColor = Color.Transparent;            
 
+            //Tracking de Mouse
             Normal_Attack.MouseEnter += OnMouseEnterButton1;
             Normal_Attack.MouseLeave += OnMouseLeaveButton1;
             Special_Attack.MouseEnter += OnMouseEnterButton2;
@@ -45,38 +47,43 @@ namespace Softmon
             Change_Pokemon.MouseLeave += OnMouseLeaveChangeP;
         }
 
-        private void OnMouseEnterChangeP(object sender, EventArgs e)
-        {
-            Change_Pokemon.BackgroundImage = Properties.Resources.change_hover;
-        }
-        private void OnMouseLeaveChangeP(object sender, EventArgs e)
-        {
-            Change_Pokemon.BackgroundImage = Properties.Resources.change;
-        }
-        private void OnMouseEnterButton1(object sender, EventArgs e)
-        {
-            Normal_Attack.BackgroundImage = Properties.Resources.button_back_hover;
-        }
-        private void OnMouseLeaveButton1(object sender, EventArgs e)
-        {
-            Normal_Attack.BackgroundImage = Properties.Resources.button_back;
-        }
-        private void OnMouseEnterButton2(object sender, EventArgs e)
-        {
-            Special_Attack.BackgroundImage = Properties.Resources.button_back_hover;
-        }
-        private void OnMouseLeaveButton2(object sender, EventArgs e)
-        {
-            Special_Attack.BackgroundImage = Properties.Resources.button_back;
-        }
-
-        private void Main_Shown(object sender, EventArgs e)
+        private void Main_Shown(object sender, EventArgs e) //Cargar Pokemones al UI
         {
             LoadPokemon(Player.currentPokemon, false);
             LoadPokemon(PC.currentPokemon, true);
         }
 
-        private void Normal_Attack_Click(object sender, EventArgs e)
+        private void OnMouseEnterChangeP(object sender, EventArgs e) //EventHandler de Mouse
+        {
+            Change_Pokemon.BackgroundImage = Properties.Resources.change_hover;
+        }
+
+        private void OnMouseLeaveChangeP(object sender, EventArgs e) //EventHandler de Mouse
+        {
+            Change_Pokemon.BackgroundImage = Properties.Resources.change;
+        }
+
+        private void OnMouseEnterButton1(object sender, EventArgs e) //EventHandler de Mouse
+        {
+            Normal_Attack.BackgroundImage = Properties.Resources.button_back_hover;
+        }
+
+        private void OnMouseLeaveButton1(object sender, EventArgs e) //EventHandler de Mouse
+        {
+            Normal_Attack.BackgroundImage = Properties.Resources.button_back;
+        }
+
+        private void OnMouseEnterButton2(object sender, EventArgs e) //EventHandler de Mouse
+        {
+            Special_Attack.BackgroundImage = Properties.Resources.button_back_hover;
+        }
+
+        private void OnMouseLeaveButton2(object sender, EventArgs e) //EventHandler de Mouse
+        {
+            Special_Attack.BackgroundImage = Properties.Resources.button_back;
+        }
+
+        private void Normal_Attack_Click(object sender, EventArgs e) //EventHandler de Mouse
         {
             Normal_Attack.Enabled = Special_Attack.Enabled = Change_Pokemon.Enabled = false;
 
@@ -105,7 +112,7 @@ namespace Softmon
 
         }
 
-        private void Special_Attack_Click(object sender, EventArgs e)
+        private void Special_Attack_Click(object sender, EventArgs e) //EventHandler de Mouse
         {
             Normal_Attack.Enabled = Special_Attack.Enabled = Change_Pokemon.Enabled = false;
 
@@ -133,7 +140,7 @@ namespace Softmon
             }
         }
 
-        private void Change_Pokemon_Click(object sender, EventArgs e)
+        private void Change_Pokemon_Click(object sender, EventArgs e) //EventHandler de Mouse
         {
             var form = new Change_Pokemon(Player);
             form.ShowDialog();
@@ -144,7 +151,7 @@ namespace Softmon
             }
         }
 
-        private void Initialize()
+        private void Initialize() //Load or Create the pokedex and trainer
         {
             try //Read files and create PC Player
             {
@@ -162,7 +169,7 @@ namespace Softmon
             }
         }
 
-        private void LoadPokemon(Pokemon poke, bool isPc)
+        private void LoadPokemon(Pokemon poke, bool isPc) //Carga assets y texto a UI
         {
             if (!isPc)
             {
@@ -185,7 +192,7 @@ namespace Softmon
             LoadPokemonImage(poke.Name, isPc);
         }
 
-        private void LoadPokemonImage(string pokemonName, bool isPC)
+        private void LoadPokemonImage(string pokemonName, bool isPC) //Carga imagen de Pokemon
         {
             switch (pokemonName.ToLower())
             {
@@ -216,7 +223,7 @@ namespace Softmon
             }
         }
 
-        private void ChangePokemon()
+        private void ChangePokemon() //Maneja los cambios de personaje
         {
             if (Player.currentPokemon.Health == 0)
             {
@@ -228,10 +235,10 @@ namespace Softmon
 
             if (PC.currentPokemon.Health == 0)
             {
-                PC.Pokemons.Remove(PC.currentPokemon);
-                if (PC.Pokemons.Count > 1)
+                PC.Pokemons.RemoveAt(0);
+                if (PC.Pokemons.Count >= 1)
                 {
-                    PC.currentPokemon = PC.Pokemons[rnd.Next(0, PC.Pokemons.Count)];
+                    PC.currentPokemon = PC.Pokemons[0];
                     LoadPokemon(PC.currentPokemon, true);
                 }
                 else
@@ -241,7 +248,7 @@ namespace Softmon
             }
         }
 
-        private void CustomFontInit()
+        private void CustomFontInit() //Inicializa las fuentes
         {
             //Create your private font collection object.
             PrivateFontCollection pfc = new PrivateFontCollection();

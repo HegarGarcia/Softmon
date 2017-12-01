@@ -18,7 +18,7 @@ namespace Softmon
 
         static Random rnd = new Random();
 
-        public List<Pokemon> LoadPokedex()
+        public List<Pokemon> LoadPokedex() //Carga Pokedex a memoria
         {
             //Get Pokedex File
             FileStream pokedexFile = new FileStream(pokedexFilePath, FileMode.Open);
@@ -32,7 +32,7 @@ namespace Softmon
             return Pokedex;
         }
 
-        public Trainer LoadTrainer()
+        public Trainer LoadTrainer() //Carga jugador a memoria
         {
             //Get Pokedex File
             FileStream trainerFile = new FileStream(trainerFilePath, FileMode.Open);
@@ -46,7 +46,7 @@ namespace Softmon
             return Player;
         }
 
-        public void CreatePokedex(XmlWriterSettings settings)
+        public void CreatePokedex(XmlWriterSettings settings) //Crea archivo de Pokedex
         {
             if (!File.Exists(pokedexFilePath))
             {
@@ -80,7 +80,7 @@ namespace Softmon
                     Health = 44,
                     MaxHealth = 44,
                     Attack = 48,
-                    Defense = 65,
+                    Defense = 55,
                     SpAttack = 50,
                     Id = 3
                 };
@@ -131,7 +131,7 @@ namespace Softmon
             }
         }
 
-        public void CreateTrainer(XmlWriterSettings settings, List<Pokemon> Pokedex)
+        public void CreateTrainer(XmlWriterSettings settings, List<Pokemon> Pokedex) //Crea archivo de Trainer
         {
             if (!File.Exists(trainerFilePath))
             {
@@ -153,24 +153,19 @@ namespace Softmon
             }
         }
 
-        public Trainer CreatePC(List<Pokemon> Pokedex)
+        public Trainer CreatePC(List<Pokemon> Pokedex) //Crea el jugador de PC
         {
             Trainer PC = new Trainer();
             PC = new Trainer("PC", "Intel");
 
-            List<Pokemon> temp = new List<Pokemon>();
-
-            while (temp.Count < 3)
-            {
-                temp.Add(Pokedex[rnd.Next(0, 6)]);
-            }
+            List<Pokemon> temp = Pokedex.OrderBy(Poke => rnd.Next()).ToList<Pokemon>();
 
             PC.AddPokemons(temp);
 
             return PC;
         }
 
-        public void SaveTrainer(Trainer Player)
+        public void SaveTrainer(Trainer Player) //Guarda los datos al archivo de jugador
         {
             //Create Settings
             XmlWriterSettings settings = new XmlWriterSettings { Indent = true };
@@ -183,13 +178,13 @@ namespace Softmon
             trainerFile.Close();
         }
 
-        public Trainer SavePokemon(Trainer Player)
+        public Trainer SavePokemon(Trainer Player) //Actualiza los datos del pokemon en el jugador
         {
             Player.Pokemons.Where(a => a.Id == Player.currentPokemon.Id).First().Health = Player.currentPokemon.Health;
             return Player;
         }
 
-        public Trainer PlayerNormalAttack(Trainer Player, Trainer PC)
+        public Trainer PlayerNormalAttack(Trainer Player, Trainer PC) //Jugador usa ataque normal contra PC
         {
             switch (Player.currentPokemon.Type)
             {
@@ -221,7 +216,7 @@ namespace Softmon
             return PC;
         }
 
-        public Trainer PlayerSpecialAttack(Trainer Player, Trainer PC)
+        public Trainer PlayerSpecialAttack(Trainer Player, Trainer PC) //Jugador usa ataque especial contra PC
         {
             switch (Player.currentPokemon.Type)
             {
@@ -253,9 +248,9 @@ namespace Softmon
             return PC;
         }
 
-        public Trainer PcAttacking(Trainer Player, Trainer PC)
+        public Trainer PcAttacking(Trainer Player, Trainer PC) //Lógica de Ataque de PC
         {
-            if (rnd.Next(0, 11) <= 6)
+            if (rnd.Next(0, 11) < 5)
             {
                 Player = PcNormalAttack(Player, PC);
             }
@@ -267,7 +262,7 @@ namespace Softmon
             return Player;
         }
 
-        private Trainer PcNormalAttack(Trainer Player, Trainer PC)
+        private Trainer PcNormalAttack(Trainer Player, Trainer PC) //PC usa ataque normal contra Jugador
         {
             switch (PC.currentPokemon.Type)
             {
@@ -299,7 +294,7 @@ namespace Softmon
             return Player;
         }
 
-        private Trainer PcSpecialAttack(Trainer Player, Trainer PC)
+        private Trainer PcSpecialAttack(Trainer Player, Trainer PC) //PC usa ataque especial contra Jugador
         {
             switch (PC.currentPokemon.Type)
             {
@@ -331,7 +326,7 @@ namespace Softmon
             return Player;
         }
 
-        public bool CheckGameOver(Trainer Player)
+        public bool CheckGameOver(Trainer Player) //Checa si el jugador perdio
         {
             if (Player.Pokemons.TrueForAll(poke => poke.Health == 0))
             {

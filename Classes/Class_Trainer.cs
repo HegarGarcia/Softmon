@@ -41,15 +41,15 @@ namespace Softmon
             set;
         }
 
-        public Trainer(string nombre, string ciudad)
+        public Trainer(string nombre, string ciudad) //Inicializar jugador
         {
             this.Name = nombre;
             this.City = ciudad;
         }
 
-        public Trainer() { }
+        public Trainer() { } //Crear jugador vacio
 
-        public void AddPokemons(List<Pokemon> PokemonList)
+        public void AddPokemons(List<Pokemon> PokemonList) //Añadir pokemones al jugador
         {
             Pokemons = PokemonList;
             this.currentPokemon = Pokemons[0];

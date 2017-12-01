@@ -9,7 +9,7 @@ namespace Softmon
 {
     public class PokemonWater : Pokemon
     {
-        public PokemonWater()
+        public PokemonWater() //Inicializa el pokemon con Nivel, Tipo y Movimientos
         {
             this.Type = "water";
             this.Level = 1;
@@ -18,7 +18,7 @@ namespace Softmon
             this.MoveSet[1] = "Water Gun";
         }
 
-        public void Attacking(Pokemon defender)
+        public void Attacking(Pokemon defender) //Ecuacion de Ataque Normal
         {
             float levelDamage = ((2 * this.Level) / 5) + 2;
             float modifier = Effectiveness(defender.Type) + 0.1f;
@@ -27,7 +27,7 @@ namespace Softmon
             defender.Health = (defender.Health - damage <= 0 ? 0 : defender.Health - damage);
         }
 
-        public void SpAttacking(Pokemon defender)
+        public void SpAttacking(Pokemon defender) //Ecuacion de Ataque Especial
         {
             float levelDamage = ((2 * this.Level) / 5) + 2;
             float modifier = Effectiveness(defender.Type) + 0.1f;
@@ -36,7 +36,7 @@ namespace Softmon
             defender.Health = (defender.Health - damage <= 0 ? 0 : defender.Health - damage);
         }
 
-        private float Effectiveness(string dType)
+        private float Effectiveness(string dType) //Regresa efectividad de ataque contra tipo de pokemon
         {
             switch (dType)
             {

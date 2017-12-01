@@ -75,10 +75,10 @@
             // 
             this.Name_PC.AutoSize = true;
             this.Name_PC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
-            this.Name_PC.Font = new System.Drawing.Font("Pokemon Pixel Font", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_PC.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_PC.Location = new System.Drawing.Point(17, 14);
             this.Name_PC.Name = "Name_PC";
-            this.Name_PC.Size = new System.Drawing.Size(60, 25);
+            this.Name_PC.Size = new System.Drawing.Size(97, 33);
             this.Name_PC.TabIndex = 4;
             this.Name_PC.Text = "Name";
             // 
@@ -86,10 +86,10 @@
             // 
             this.Name_Player.AutoSize = true;
             this.Name_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
-            this.Name_Player.Font = new System.Drawing.Font("Pokemon Pixel Font", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name_Player.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name_Player.Location = new System.Drawing.Point(324, 191);
             this.Name_Player.Name = "Name_Player";
-            this.Name_Player.Size = new System.Drawing.Size(60, 25);
+            this.Name_Player.Size = new System.Drawing.Size(97, 33);
             this.Name_Player.TabIndex = 7;
             this.Name_Player.Text = "Name";
             // 
@@ -111,10 +111,10 @@
             // 
             this.HPNumber_PC.AutoSize = true;
             this.HPNumber_PC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
-            this.HPNumber_PC.Font = new System.Drawing.Font("Pokemon Pixel Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPNumber_PC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HPNumber_PC.Location = new System.Drawing.Point(253, 74);
             this.HPNumber_PC.Name = "HPNumber_PC";
-            this.HPNumber_PC.Size = new System.Drawing.Size(39, 14);
+            this.HPNumber_PC.Size = new System.Drawing.Size(56, 20);
             this.HPNumber_PC.TabIndex = 11;
             this.HPNumber_PC.Text = "Health";
             // 
@@ -122,10 +122,10 @@
             // 
             this.HPNumber_Player.AutoSize = true;
             this.HPNumber_Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(216)))));
-            this.HPNumber_Player.Font = new System.Drawing.Font("Pokemon Pixel Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HPNumber_Player.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HPNumber_Player.Location = new System.Drawing.Point(563, 253);
             this.HPNumber_Player.Name = "HPNumber_Player";
-            this.HPNumber_Player.Size = new System.Drawing.Size(39, 14);
+            this.HPNumber_Player.Size = new System.Drawing.Size(56, 20);
             this.HPNumber_Player.TabIndex = 12;
             this.HPNumber_Player.Text = "Health";
             // 

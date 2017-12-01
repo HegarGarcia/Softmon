@@ -8,7 +8,7 @@ namespace Softmon
 {
     public class PokemonNormal : Pokemon
     {
-        public PokemonNormal() 
+        public PokemonNormal() //Inicializa el pokemon con Nivel, Tipo y Movimientos
         {
             this.Type = "normal";
             this.Level = 1;
@@ -17,7 +17,7 @@ namespace Softmon
             this.MoveSet[1] = "Scratch";
         }
 
-        public void Attacking(Pokemon defender)
+        public void Attacking(Pokemon defender) //Ecuacion de Ataque Normal
         {
             float levelDamage = ((2 * this.Level) / 5) + 2;
             float modifier = Effectiveness(defender.Type) + 0.1f;
@@ -26,7 +26,7 @@ namespace Softmon
             defender.Health = (defender.Health - damage <= 0 ? 0 : defender.Health - damage);
         }
 
-        public void SpAttacking(Pokemon defender)
+        public void SpAttacking(Pokemon defender) //Ecuacion de Ataque Especial
         {
             float levelDamage = ((2 * this.Level) / 5) + 2;
             float modifier = Effectiveness(defender.Type) + 0.1f;
@@ -35,8 +35,8 @@ namespace Softmon
             defender.Health = (defender.Health - damage <= 0 ? 0 : defender.Health - damage);
         }
 
-        private float Effectiveness(string dType) => 1f;
+        private float Effectiveness(string dType) => 1f; //Regresa efectividad de ataque contra tipo de pokemon
 
-        
+
     }
 }
