@@ -19,7 +19,7 @@ namespace Softmon
 
         public override void Attacking(Pokemon defender) //Ecuacion de Ataque Normal
         {
-            float levelDamage = ((2 * this.Level) / 5) + 2;
+            float levelDamage = (float)(((2 * this.Level) / Math.Sqrt((double)30)) + 2);
             float modifier = Effectiveness(defender.Type) + 0.1f;
             float attackVsDefence = this.Attack / defender.Defense;
             int damage = (int)(((levelDamage * attackVsDefence) / 50 + 2 + rnd.Next(1, 8)) * modifier);
