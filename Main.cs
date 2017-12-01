@@ -34,6 +34,7 @@ namespace Softmon
             pcPokemon.Parent = pictureBox1;
             PCHPBack.Parent = pictureBox1;
             PlayerHPBack.Parent = pictureBox1;
+            date.Parent = pictureBox1;
             pictureBox1.BackColor = Color.Transparent;            
 
             //Tracking de Mouse
@@ -45,7 +46,7 @@ namespace Softmon
             Change_Pokemon.MouseLeave += OnMouseLeaveChangeP;
         }
 
-        private void Main_Shown(object sender, EventArgs e) //Cargar Pokemones al UI
+        private void Main_Shown(object sender, EventArgs e) //Cargar Pokemones al User Interface
         {
             date.Text = $"{DateTime.Now.ToLongDateString()} {DateTime.Now.ToLongTimeString()}";
             LoadPokemon(Player.currentPokemon, false);

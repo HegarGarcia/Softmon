@@ -236,9 +236,10 @@
             // 
             this.date.AutoSize = true;
             this.date.BackColor = System.Drawing.Color.Transparent;
+            this.date.Font = new System.Drawing.Font("Pokemon Pixel Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date.Location = new System.Drawing.Point(391, 7);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(30, 13);
+            this.date.Size = new System.Drawing.Size(30, 14);
             this.date.TabIndex = 16;
             this.date.Text = "Date";
             // 
