@@ -73,5 +73,10 @@ namespace Softmon
             else
                 this.label1.Text = $"Elige {counter} Pokemones";
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

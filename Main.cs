@@ -271,6 +271,8 @@ namespace Softmon
             Normal_Attack.Font = new Font(pfc.Families[0], Normal_Attack.Font.Size);
             Special_Attack.Font = new Font(pfc.Families[0], Special_Attack.Font.Size);
             Change_Pokemon.Font = new Font(pfc.Families[0], Change_Pokemon.Font.Size);
+            Name_Player.Font = new Font(pfc.Families[0], Name_Player.Font.Size);
+            Name_PC.Font = new Font(pfc.Families[0], Name_PC.Font.Size);
         }
     }
 }
