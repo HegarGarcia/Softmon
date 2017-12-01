@@ -47,6 +47,7 @@ namespace Softmon
 
         private void Main_Shown(object sender, EventArgs e) //Cargar Pokemones al UI
         {
+            date.Text = $"{DateTime.Now.ToLongDateString()} {DateTime.Now.ToLongTimeString()}";
             LoadPokemon(Player.currentPokemon, false);
             LoadPokemon(PC.currentPokemon, true);
         }
@@ -271,6 +272,11 @@ namespace Softmon
             Change_Pokemon.Font = new Font(pfc.Families[0], Change_Pokemon.Font.Size);
             Name_Player.Font = new Font(pfc.Families[0], Name_Player.Font.Size);
             Name_PC.Font = new Font(pfc.Families[0], Name_PC.Font.Size);
+        }
+
+        private void dateTimer_Tick(object sender, EventArgs e)
+        {
+            date.Text = $"{DateTime.Now.ToLongDateString()} {DateTime.Now.ToLongTimeString()}";
         }
     }
 }

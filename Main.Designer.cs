@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.Change_Pokemon = new System.Windows.Forms.Button();
             this.Name_PC = new System.Windows.Forms.Label();
@@ -44,6 +45,8 @@
             this.playerPokemon = new System.Windows.Forms.PictureBox();
             this.PCHPBack = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.date = new System.Windows.Forms.Label();
+            this.dateTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.button_BG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerHPBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcPokemon)).BeginInit();
@@ -229,12 +232,29 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // date
+            // 
+            this.date.AutoSize = true;
+            this.date.BackColor = System.Drawing.Color.Transparent;
+            this.date.Location = new System.Drawing.Point(391, 7);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(30, 13);
+            this.date.TabIndex = 16;
+            this.date.Text = "Date";
+            // 
+            // dateTimer
+            // 
+            this.dateTimer.Enabled = true;
+            this.dateTimer.Interval = 1000;
+            this.dateTimer.Tick += new System.EventHandler(this.dateTimer_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.date);
             this.Controls.Add(this.Normal_Attack);
             this.Controls.Add(this.Special_Attack);
             this.Controls.Add(this.button_BG);
@@ -288,6 +308,8 @@
         private System.Windows.Forms.PictureBox playerPokemon;
         private System.Windows.Forms.PictureBox pcPokemon;
         private System.Windows.Forms.PictureBox button_BG;
+        private System.Windows.Forms.Label date;
+        private System.Windows.Forms.Timer dateTimer;
     }
 }
 
