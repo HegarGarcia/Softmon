@@ -46,9 +46,10 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 31);
+            this.label1.Size = new System.Drawing.Size(179, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Elige 3 Pokemones";
+            this.label1.Text = "Elige 3 Pokemon";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
