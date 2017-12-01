@@ -90,5 +90,21 @@ namespace Softmon
             get;
             set;
         }
+
+        public virtual void Attacking(Pokemon defender) //Ecuacion de Ataque Normal
+        {
+            float levelDamage = ((2 * this.Level) / 5) + 2;
+            float attackVsDefence = this.Attack / defender.Defense;
+            int damage = (int)(((levelDamage * attackVsDefence) / 50 + 2 + rnd.Next(1, 8)));
+            defender.Health = (defender.Health - damage <= 0 ? 0 : defender.Health - damage);
+        }
+
+        public virtual void SpAttacking(Pokemon defender) //Ecuacion de Ataque Especial
+        {
+            float levelDamage = ((2 * this.Level) / 5) + 2;
+            float attackVsDefence = this.Attack / defender.Defense;
+            int damage = (int)(((levelDamage * attackVsDefence * this.SpAttack) / 50 + 2 + rnd.Next(1, 8)));
+            defender.Health = (defender.Health - damage <= 0 ? 0 : defender.Health - damage);
+        }
     }
 }

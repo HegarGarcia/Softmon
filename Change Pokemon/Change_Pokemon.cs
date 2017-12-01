@@ -13,19 +13,20 @@ namespace Softmon
     public partial class Change_Pokemon : Form
     {
         private Trainer Player = new Trainer();
-        public Pokemon current
+
+        public Pokemon current //Pokemon actual del jugador
         {
             get;
             private set;
         } = null;
 
-        public Change_Pokemon(Trainer player)
+        public Change_Pokemon(Trainer player) //Inicializar form
         {
             InitializeComponent();
             this.Player = player;
         }
 
-        private void Change_Pokemon_Shown(object sender, EventArgs e)
+        private void Change_Pokemon_Shown(object sender, EventArgs e) //Cargar sprites al UI
         {
             List<Pokemon> pokemons = Player.Pokemons;
 
@@ -59,21 +60,21 @@ namespace Softmon
             }
         }
 
-        private void Pokemon1_Click(object sender, EventArgs e)
+        private void Pokemon1_Click(object sender, EventArgs e) //EventHandler para Pokemon 1
         {
             int index = Int32.Parse(Pokemon1.Tag.ToString());
             current = Player.Pokemons[index];
             this.Close();
         }
 
-        private void Pokemon2_Click(object sender, EventArgs e)
+        private void Pokemon2_Click(object sender, EventArgs e) //EventHandler para Pokemon 2
         {
             int index = Int32.Parse(Pokemon2.Tag.ToString());
             current = Player.Pokemons[index];
             this.Close();
         }
 
-        private void Pokemon3_Click(object sender, EventArgs e)
+        private void Pokemon3_Click(object sender, EventArgs e) //EventHandler para Pokemon 3
         {
             int index = Int32.Parse(Pokemon3.Tag.ToString());
             current = Player.Pokemons[index];

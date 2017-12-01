@@ -17,7 +17,7 @@ namespace Softmon
             this.MoveSet[1] = "Scratch";
         }
 
-        public void Attacking(Pokemon defender) //Ecuacion de Ataque Normal
+        public override void Attacking(Pokemon defender) //Ecuacion de Ataque Normal
         {
             float levelDamage = ((2 * this.Level) / 5) + 2;
             float modifier = Effectiveness(defender.Type) + 0.1f;
@@ -26,7 +26,7 @@ namespace Softmon
             defender.Health = (defender.Health - damage <= 0 ? 0 : defender.Health - damage);
         }
 
-        public void SpAttacking(Pokemon defender) //Ecuacion de Ataque Especial
+        public override void SpAttacking(Pokemon defender) //Ecuacion de Ataque Especial
         {
             float levelDamage = ((2 * this.Level) / 5) + 2;
             float modifier = Effectiveness(defender.Type) + 0.1f;

@@ -23,7 +23,7 @@ namespace Softmon
             set;
         } = null;
 
-        private void createTrainerButton_Click(object sender, EventArgs e)
+        private void createTrainerButton_Click(object sender, EventArgs e) //Crear entregador
         {
             string name = nameTextBox.Text;
             string city = cityTextBox.Text;
@@ -32,13 +32,13 @@ namespace Softmon
             this.Close();
         }
 
-        private void nameTextBox_TextChanged(object sender, EventArgs e)
+        private void nameTextBox_TextChanged(object sender, EventArgs e) //EventHandler para TextBox
         {
             createTrainerButton.Enabled = !string.IsNullOrWhiteSpace(this.nameTextBox.Text) &&
                 !string.IsNullOrWhiteSpace(this.cityTextBox.Text);
         }
 
-        private void cityTextBox_TextChanged(object sender, EventArgs e)
+        private void cityTextBox_TextChanged(object sender, EventArgs e) //EventHandler para TextBox
         {
             createTrainerButton.Enabled = !string.IsNullOrWhiteSpace(this.nameTextBox.Text) &&
                 !string.IsNullOrWhiteSpace(this.cityTextBox.Text);

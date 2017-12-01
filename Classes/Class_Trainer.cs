@@ -32,9 +32,6 @@ namespace Softmon
         } = new List<Pokemon>();
 
         [DataMember]
-        public List<string> BattleRecords = new List<string>();
-
-        [DataMember]
         public Pokemon currentPokemon
         {
             get;
